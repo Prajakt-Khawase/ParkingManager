@@ -16,6 +16,7 @@ public class VehicleInformation extends AppCompatActivity {
 
     public void bookSlot(View v){
         startActivity(new Intent(VehicleInformation.this, BookSlot.class));
-        this.finish();
+        
     }
+
 }
