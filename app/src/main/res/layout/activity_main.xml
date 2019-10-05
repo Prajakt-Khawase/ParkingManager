@@ -67,4 +67,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="226dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="385dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="223dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginBottom="622dp"
+        android:text="Customer Login"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
