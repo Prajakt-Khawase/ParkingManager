@@ -24,4 +24,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, SignupPage.class));
         this.finish();
     }
+
 }
