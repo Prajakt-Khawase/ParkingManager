@@ -19,4 +19,8 @@ public class MainActivity extends AppCompatActivity {
         this.finish();
 
     }
+
+    public void signUp(View v){
+        
+    }
 }
