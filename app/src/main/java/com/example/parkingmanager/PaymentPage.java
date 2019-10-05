@@ -2,7 +2,9 @@ package com.example.parkingmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class PaymentPage extends AppCompatActivity {
 
@@ -11,4 +13,11 @@ public class PaymentPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_page); 
     }
+    public void invokeLogin(View v){
+        startActivity(new Intent(PaymentPage.this, CustomerLogout.class));
+
+
+    }
+
+
 }
