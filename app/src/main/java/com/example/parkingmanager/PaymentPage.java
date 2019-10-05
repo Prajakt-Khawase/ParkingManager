@@ -13,7 +13,7 @@ public class PaymentPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_page); 
     }
-    public void invokeLogin(View v){
+    public void doneAction(View v){
         startActivity(new Intent(PaymentPage.this, CustomerLogout.class));
 
 
