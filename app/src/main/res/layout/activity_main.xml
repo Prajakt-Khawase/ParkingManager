@@ -52,4 +52,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="149dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="226dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="502dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter User Id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
