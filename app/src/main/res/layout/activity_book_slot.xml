@@ -10,10 +10,14 @@
         android:id="@+id/goToPayment"
         android:layout_width="194dp"
         android:layout_height="71dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="439dp"
+        android:layout_marginBottom="221dp"
         android:onClick="payment"
         android:text="Book Slot"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button4"
@@ -56,54 +60,78 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="197dp"
+        android:layout_marginBottom="486dp"
         android:text="Slot 4"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="197dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="483dp"
         android:text="slot 5"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="200dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="197dp"
+        android:layout_marginBottom="486dp"
         android:text="Slot 6"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="197dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginBottom="404dp"
         android:text="Slot 7"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="279dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginBottom="391dp"
         android:text="Slot 8"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="292dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="291dp"
+        android:layout_marginBottom="392dp"
         android:text="Slot 9"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="291dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
