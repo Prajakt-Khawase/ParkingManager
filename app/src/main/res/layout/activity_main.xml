@@ -107,6 +107,10 @@
         android:id="@+id/button3"
         android:layout_width="114dp"
         android:layout_height="57dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="525dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="149dp"
         android:onClick="signUp"
         android:paddingLeft="16dp"
         android:paddingTop="16dp"
@@ -114,6 +118,8 @@
         android:paddingBottom="16dp"
         android:text="Sign Up"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="525dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
