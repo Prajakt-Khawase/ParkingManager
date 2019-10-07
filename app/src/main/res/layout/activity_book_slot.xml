@@ -17,18 +17,23 @@
         android:text="Book Slot"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="307dp"
         android:layout_marginBottom="569dp"
         android:text="Slot 1"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button8"
@@ -86,7 +91,7 @@
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
+        android:layout_marginStart="285dp"
         android:layout_marginTop="197dp"
         android:layout_marginBottom="486dp"
         android:text="Slot 6"
@@ -112,9 +117,9 @@
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginBottom="391dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginBottom="404dp"
         android:text="Slot 8"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -126,8 +131,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="285dp"
-        android:layout_marginTop="291dp"
-        android:layout_marginBottom="392dp"
+        android:layout_marginTop="279dp"
+        android:layout_marginBottom="404dp"
         android:text="Slot 9"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
