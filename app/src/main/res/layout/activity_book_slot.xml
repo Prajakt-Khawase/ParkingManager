@@ -170,4 +170,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="87dp"
+        android:layout_height="50dp"
+        android:text="Slot 10"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="371dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
