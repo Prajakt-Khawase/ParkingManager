@@ -72,9 +72,9 @@
         android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="197dp"
-        android:layout_marginBottom="486dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginBottom="482dp"
         android:paddingLeft="16dp"
         android:paddingTop="16dp"
         android:paddingRight="16dp"
@@ -172,18 +172,29 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="87dp"
-        android:layout_height="50dp"
+        android:layout_width="101dp"
+        android:layout_height="59dp"
         android:text="Slot 10"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="371dp" />
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="19dp"
+        tools:layout_editor_absoluteY="360dp" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="99dp"
+        android:layout_height="57dp"
         android:text="SLOT11"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="369dp" />
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="362dp" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="97dp"
+        android:layout_height="59dp"
+        android:text="Slot 11"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="362dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
