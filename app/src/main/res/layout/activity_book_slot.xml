@@ -208,7 +208,7 @@
         android:layout_marginStart="285dp"
         android:layout_marginTop="362dp"
         android:layout_marginBottom="310dp"
-        android:text="Button"
+        android:text="Slot 12"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
