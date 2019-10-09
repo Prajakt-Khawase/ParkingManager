@@ -16,8 +16,9 @@
         android:paddingRight="16dp"
         android:paddingBottom="16dp"
         android:text="Book Slot"
+        android:textSize="24sp"
         tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="547dp" />
+        tools:layout_editor_absoluteY="504dp" />
 
     <Button
         android:id="@+id/button4"
@@ -192,7 +193,7 @@
         android:id="@+id/button16"
         android:layout_width="97dp"
         android:layout_height="59dp"
-        android:text="Slot 11"
+        android:text="Button"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="285dp"
         tools:layout_editor_absoluteY="362dp" />
