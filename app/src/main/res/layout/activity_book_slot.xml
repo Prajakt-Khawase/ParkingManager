@@ -192,18 +192,26 @@
         android:id="@+id/button7"
         android:layout_width="99dp"
         android:layout_height="57dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="362dp"
+        android:layout_marginBottom="312dp"
         android:text="SLOT11"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="362dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button16"
         android:layout_width="97dp"
         android:layout_height="59dp"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="362dp"
+        android:layout_marginBottom="310dp"
         android:text="Button"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="285dp"
-        tools:layout_editor_absoluteY="362dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
