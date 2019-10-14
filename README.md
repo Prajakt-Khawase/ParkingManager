@@ -11,16 +11,25 @@ Existing parking system consist of many disadvantages. The systems only provide 
 ## Activities in the application
 1. Login: - After installation of the application user will be asked to enter in login details.
 ![LoginPage](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Loginpage.png)
+
 2. Signup: - If the user does not have login credentials then invoke the signup activity and ask user to input credentials which would be used to login.
+
 ![SignupPage](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/SignupPage.png)
 3. Vehicle Information: - After successful signup this activity get invoke which will ask user to fill the vehicle information and proceed forward to check for whether the slots are available or not.
+
 ![VehicleInformationPage](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/VehicleInformation.png)
+
 4. Book Slot Activity: - if the slots are, free then this activity will show available slots and will proceed for the booking.
+
 ![Bookslot](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/BookSlot.png)
+
 5. Payment Activity: - This activity will open to get payment from user.
+
 ![PaymentPage](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Payment.png)
+
 6. Customer Logout: - Customer can logout from this Activity.
-![LOgout](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Logout.png)
+
+![Logout](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Logout.png)
 
 ## Risky Components of the App
 Merge conflicts may occur
