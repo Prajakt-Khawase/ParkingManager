@@ -13,6 +13,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_EMAIL = "EMAIL";
     public static final String COLUMN_MOBILE = "MOBILE";
+    public static final String COLUMN_PASSWORD = "PASWWORD";
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
