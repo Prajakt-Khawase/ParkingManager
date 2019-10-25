@@ -37,6 +37,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        
+        database = this.getReadableDatabase();
     }
 }
