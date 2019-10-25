@@ -12,14 +12,21 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_MANAGER = "MANAGER";
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_EMAIL = "EMAIL";
+    public static final String COLUMN_MOBILE = "MOBILE";
+    public static final String COLUMN_PASSWORD = "PASWWORD";
+    public static final String COLUMN_NAME = "NAME";
+
+    //Slot Booking Table
+    public static final String TABLE_NAME_BOOKING = "BOOKING";
+
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         // TODO Auto-generated constructor stub
     }
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table " + TABLE_NAME_MANAGER + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME + " VARCHAR," + COLUMN_EMAIL + " VARCHAR," + COLUMN_MOBILE + " VARCHAR," + COLUMN_PASSWORD + " VARCHAR);");
     }
 
     @Override
