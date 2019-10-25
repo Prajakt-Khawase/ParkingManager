@@ -15,7 +15,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_MOBILE = "MOBILE";
     public static final String COLUMN_PASSWORD = "PASWWORD";
     public static final String COLUMN_NAME = "NAME";
-
+    private SQLiteDatabase database;
     //Slot Booking Table
     public static final String TABLE_NAME_BOOKING = "BOOKING";
 
@@ -35,8 +35,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    @Override 
+    @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        
     }
 }
