@@ -9,6 +9,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "SQLiteDatabase.db";
 
+    // Creating Attributes for Manager Table.
+
+    public static final String TABLE_NAME_MANAGER = "MANAGER";
+
+
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         // TODO Auto-generated constructor stub
