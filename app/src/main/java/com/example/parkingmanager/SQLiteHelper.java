@@ -39,7 +39,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_EMAIL, email);
         contentValues.put(COLUMN_MOBILE, mobile);
         contentValues.put(COLUMN_PASSWORD, password);
-
+        database.insert(TABLE_NAME_MANAGER, null, contentValues);
+        database.close();
     }
 
     @Override
