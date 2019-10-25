@@ -8,12 +8,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "SQLiteDatabase.db";
+    // Creating Attributes for Manager Table.
+    public static final String TABLE_NAME_MANAGER = "MANAGER";
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_EMAIL = "EMAIL";
-    // Creating Attributes for Manager Table.
-
-    public static final String TABLE_NAME_MANAGER = "MANAGER";
-
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
