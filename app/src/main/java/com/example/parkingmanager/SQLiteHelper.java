@@ -33,12 +33,17 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public void insertRecord(String name, String email, String mobile, String password) {
+        database = this.getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_NAME, name);
+        contentValues.put(COLUMN_EMAIL, email);
+        contentValues.put(COLUMN_MOBILE, mobile);
+        contentValues.put(COLUMN_PASSWORD, password);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        database = this.getReadableDatabase();
-        ContentValues contentValues = new ContentValues();
+
     }
 }
