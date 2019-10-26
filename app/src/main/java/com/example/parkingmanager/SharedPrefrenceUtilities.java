@@ -47,6 +47,7 @@ public class SharedPrefrenceUtilities {
     //get int value from Shared Preference
     public static int getSPintValue(Context mContext,String key)
     {
+        SharedPreferences sharedPreferences=mContext.getSharedPreferences("MyPref",Context.MODE_PRIVATE);
 
     }
 
