@@ -51,5 +51,9 @@ public class SharedPrefrenceUtilities {
         int value = sharedPreferences.getInt(key,0);
         return value;
     }
-
+    //get boolean value from Shared Preference
+    public static boolean getSPbooleanValue(Context mContext,String key)
+    {
+       
+    }
 }
