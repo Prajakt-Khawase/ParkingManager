@@ -23,6 +23,9 @@ public class SharedPrefrenceUtilities {
     //Store boolean using Shared Preference
     public static void setSPboolean(Context mContext,String key, boolean value) {
         SharedPreferences pref =mContext.getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(key, value);
+        editor.commit();
     }
 
 }
