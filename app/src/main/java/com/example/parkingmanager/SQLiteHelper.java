@@ -62,6 +62,14 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.close();
     }
     public Cursor managerLogin(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] coulmnNames = new String[] {COLUMN_ID,COLUMN_NAME,COLUMN_EMAIL,COLUMN_MOBILE,COLUMN_PASSWORD};
+        String whereClause = COLUMN_EMAIL + " = ? AND " + COLUMN_PASSWORD  + " = ?";
+        String[] params = new String[] {
+                username,
+                password
+        };
     }
-    
+
 }
