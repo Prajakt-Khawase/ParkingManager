@@ -19,4 +19,10 @@ public class SharedPrefrenceUtilities {
         editor.putString(key, value);
         editor.commit();
     }
+
+    //Store boolean using Shared Preference
+    public static void setSPboolean(Context mContext,String key, boolean value) {
+
+    }
+
 }
