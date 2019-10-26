@@ -48,7 +48,8 @@ public class SharedPrefrenceUtilities {
     public static int getSPintValue(Context mContext,String key)
     {
         SharedPreferences sharedPreferences=mContext.getSharedPreferences("MyPref",Context.MODE_PRIVATE);
-
+        int value = sharedPreferences.getInt(key,0);
+        return value;
     }
 
 }
