@@ -40,6 +40,7 @@ public class SharedPrefrenceUtilities {
     public static String getSPstringValue(Context mContext,String key)
     {
         SharedPreferences sharedPreferences=mContext.getSharedPreferences("MyPref",Context.MODE_PRIVATE);
-
+        String value = sharedPreferences.getString(key,null);
+        return value;
     }
 }
