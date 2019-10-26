@@ -61,5 +61,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.delete(COLUMN_ID, "ID = ?",new String[] {id});
         db.close();
     }
-
+    public Cursor managerLogin(String username, String password) {
+    }
+    
 }
