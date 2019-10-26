@@ -6,26 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     Button login;
+    EditText usernameED, passwordED;
+    String username, password;
+    SQLiteHelper mSqLiteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); 
-    }
+        setContentView(R.layout.activity_main);
+        mSqLiteHelper = new SQLiteHelper(this);
 
-    public void invokeLogin(View v){
-        startActivity(new Intent(MainActivity.this, VehicleInformation.class));
-        this.finish();
+
 
     }
 
-    public void signUp(View v){
-        startActivity(new Intent(MainActivity.this, SignupPage.class));
-        this.finish();
+    private void validation()
+    {
+
+        username=usernameED.getText().toString().toLowerCase();
+        password=passwordED.getText().toString().toLowerCase();
     }
 
 }
