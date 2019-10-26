@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     Button login;
+    EditText usernameED,passwordED;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
