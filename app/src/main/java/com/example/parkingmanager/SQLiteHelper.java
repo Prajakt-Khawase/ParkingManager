@@ -57,7 +57,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public void deleteData(String id) {
-        
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(COLUMN_ID, "ID = ?",new String[] {id});
+        db.close();
     }
 
 }
