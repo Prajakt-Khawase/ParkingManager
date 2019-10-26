@@ -56,4 +56,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public void deleteData(String id) {
+        
+    }
+
 }
