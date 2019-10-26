@@ -1,6 +1,7 @@
 package com.example.parkingmanager;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 public class SharedPrefrenceUtilities {
 
@@ -13,6 +14,6 @@ public class SharedPrefrenceUtilities {
 
     //Store string using Shared Preference
     public static void setSPstring(Context mContext, String key, String value) {
-
+        SharedPreferences pref =mContext.getSharedPreferences("MyPref", 0);
     }
 }
