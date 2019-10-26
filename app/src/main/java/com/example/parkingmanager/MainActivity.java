@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button login;
     EditText usernameED,passwordED;
     String username,password;
-    
+    SQLiteHelper mSqLiteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
