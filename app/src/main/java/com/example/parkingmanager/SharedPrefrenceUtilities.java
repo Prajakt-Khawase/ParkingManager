@@ -43,4 +43,11 @@ public class SharedPrefrenceUtilities {
         String value = sharedPreferences.getString(key,null);
         return value;
     }
+
+    //get int value from Shared Preference
+    public static int getSPintValue(Context mContext,String key)
+    {
+
+    }
+
 }
