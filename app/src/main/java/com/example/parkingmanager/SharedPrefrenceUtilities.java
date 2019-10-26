@@ -22,7 +22,7 @@ public class SharedPrefrenceUtilities {
 
     //Store boolean using Shared Preference
     public static void setSPboolean(Context mContext,String key, boolean value) {
-
+        SharedPreferences pref =mContext.getSharedPreferences("MyPref", 0);
     }
 
 }
