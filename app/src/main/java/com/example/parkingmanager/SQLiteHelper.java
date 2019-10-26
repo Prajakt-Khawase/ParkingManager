@@ -51,7 +51,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getAllData() {
-        
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_MANAGER, null );
+        return res;
     }
 
 }
