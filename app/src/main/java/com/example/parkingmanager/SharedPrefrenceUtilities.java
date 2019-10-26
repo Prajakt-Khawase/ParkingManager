@@ -14,6 +14,9 @@ public class SharedPrefrenceUtilities {
 
     //Store string using Shared Preference
     public static void setSPstring(Context mContext, String key, String value) {
-        SharedPreferences pref =mContext.getSharedPreferences("MyPref", 0); 
+        SharedPreferences pref =mContext.getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key, value);
+        editor.commit();
     }
 }
