@@ -1,5 +1,7 @@
 package com.example.parkingmanager;
 
+import android.content.Context;
+
 public class SharedPrefrenceUtilities {
 
     //SharedPreference Key
@@ -8,4 +10,9 @@ public class SharedPrefrenceUtilities {
     public static final String spEmail = "email";
     public static final String spUserId = "userId";
     public static final String spMobileNo = "mobileNo";
+
+    //Store string using Shared Preference
+    public static void setSPstring(Context mContext, String key, String value) {
+
+    }
 }
