@@ -36,4 +36,10 @@ public class SharedPrefrenceUtilities {
         editor.commit();
     }
 
+    //get string value from Shared Preference
+    public static String getSPstringValue(Context mContext,String key)
+    {
+        SharedPreferences sharedPreferences=mContext.getSharedPreferences("MyPref",Context.MODE_PRIVATE);
+
+    }
 }
