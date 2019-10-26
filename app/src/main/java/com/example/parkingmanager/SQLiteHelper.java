@@ -70,6 +70,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 username,
                 password
         };
+        Cursor c = db.query(TABLE_NAME_MANAGER, coulmnNames, whereClause, params, null, null, null);
+
+        return c;
     }
 
 }
