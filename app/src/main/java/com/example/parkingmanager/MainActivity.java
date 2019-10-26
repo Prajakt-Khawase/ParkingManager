@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     {
 
         username=usernameED.getText().toString().toLowerCase();
+        password=passwordED.getText().toString().toLowerCase();
     }
 
 }
