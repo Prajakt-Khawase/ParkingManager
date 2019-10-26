@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private void validation()
     {
 
-        
+        username=usernameED.getText().toString().toLowerCase();
     }
 
 }
