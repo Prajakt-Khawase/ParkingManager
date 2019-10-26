@@ -28,4 +28,9 @@ public class SharedPrefrenceUtilities {
         editor.commit();
     }
 
+    //Store integer using Shared Preference
+    public static void setSPineger(Context mContext,String key, int value) {
+
+    }
+
 }
