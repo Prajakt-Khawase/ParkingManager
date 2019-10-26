@@ -30,6 +30,8 @@ public class SharedPrefrenceUtilities {
 
     //Store integer using Shared Preference
     public static void setSPineger(Context mContext,String key, int value) {
+        SharedPreferences pref =mContext.getSharedPreferences("MyPref", 0);
+
 
     }
 
