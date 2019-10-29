@@ -3,6 +3,7 @@ package com.example.parkingmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Window;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -13,6 +14,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         isLoggedIn = SharedPrefrenceUtilities.getSPbooleanValue(SplashActivity.this,SharedPrefrenceUtilities.spIsLoggedin);
+        Window window = getWindow();
 
     }
 }
