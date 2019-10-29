@@ -17,7 +17,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         isLoggedIn = SharedPrefrenceUtilities.getSPbooleanValue(SplashActivity.this, SharedPrefrenceUtilities.spIsLoggedin);
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
