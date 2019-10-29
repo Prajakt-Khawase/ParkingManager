@@ -12,7 +12,7 @@ import android.view.WindowManager;
 public class SplashActivity extends AppCompatActivity {
 
     private boolean isLoggedIn = false;
-
+ 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
