@@ -3,6 +3,7 @@ package com.example.parkingmanager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Window;
@@ -29,6 +30,23 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void run() {
+                try {
+                    sleep(3000);
+
+                    if(isLoggedIn)
+                    {
+                        startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+                        finish();
+                    }
+                    else {
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        finish();
+
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
             }
 
