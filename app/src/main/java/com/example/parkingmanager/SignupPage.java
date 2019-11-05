@@ -99,6 +99,12 @@ public class SignupPage extends AppCompatActivity {
                 finish();
             }
         });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //nothing here
+            }
+        });
     }
     //Email check
     public static boolean isValidEmail(CharSequence email) {
