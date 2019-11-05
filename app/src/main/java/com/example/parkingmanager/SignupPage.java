@@ -14,7 +14,8 @@ public class SignupPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_page); 
+        setContentView(R.layout.activity_signup_page);
+        mSqLiteHelper=new SQLiteHelper(this);
     }
     public void signUp(View v){
         startActivity(new Intent(SignupPage.this, MainActivity.class));
