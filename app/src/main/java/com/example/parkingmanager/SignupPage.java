@@ -21,4 +21,17 @@ public class SignupPage extends AppCompatActivity {
         startActivity(new Intent(SignupPage.this, MainActivity.class));
 
     }
+
+    private void initialize() {
+
+
+        fnameED=findViewById(R.id.fnameSignup);
+        lnameED=findViewById(R.id.lnameSignup);
+        emailED=findViewById(R.id.emailSignup);
+        mobileED=findViewById(R.id.mobileSignup);
+        passwordED=findViewById(R.id.passwordSignup);
+        cnfrmPasswordED=findViewById(R.id.confirm_passwordSignup);
+        
+    }
+    
 }
