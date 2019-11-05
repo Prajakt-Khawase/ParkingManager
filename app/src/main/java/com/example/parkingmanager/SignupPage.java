@@ -2,11 +2,13 @@ package com.example.parkingmanager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 
 public class SignupPage extends AppCompatActivity {
     EditText fnameED,lnameED,emailED,mobileED,passwordED,cnfrmPasswordED;
@@ -88,7 +90,8 @@ public class SignupPage extends AppCompatActivity {
     }
 
     public void appCloseAlert() {
-    
+        AlertDialog.Builder builder = new AlertDialog.Builder(SignupPage.this);
+
     }
     //Email check
     public static boolean isValidEmail(CharSequence email) {
