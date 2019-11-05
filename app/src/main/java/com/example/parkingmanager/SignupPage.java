@@ -63,6 +63,11 @@ public class SignupPage extends AppCompatActivity {
             mobileED.setError("Enter mobile number");
 
         }
+        else if(password.isEmpty())
+        {
+            passwordED.setError("Enter password");
+
+        }
     }
     //Email check
     public static boolean isValidEmail(CharSequence email) {
