@@ -39,6 +39,7 @@
             android:hint="Firstname"
             android:singleLine="true"
             android:drawablePadding="5dp"
+            android:paddingLeft="10dp"/>
     </LinearLayout>
 
 </ScrollView>
