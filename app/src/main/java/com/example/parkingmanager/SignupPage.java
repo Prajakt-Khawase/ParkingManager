@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SignupPage extends AppCompatActivity {
     EditText fnameED,lnameED,emailED,mobileED,passwordED,cnfrmPasswordED;
@@ -73,6 +74,15 @@ public class SignupPage extends AppCompatActivity {
 
         }else if(!password.equals(cnfrmPassword)) {
             passwordED.setError("Password mismatch");
+
+        }
+        else {
+            String name = fname + " " + lname;
+
+            mSqLiteHelper.insertRecord(name, email, mobile, password);
+            Toast.makeText(this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(SignupPage.this, MainActivity.class));
+            finish();
 
         }
     }
