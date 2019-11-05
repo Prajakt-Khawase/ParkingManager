@@ -71,6 +71,9 @@ public class SignupPage extends AppCompatActivity {
         {
             cnfrmPasswordED.setError("Re-enter password");
 
+        }else if(!password.equals(cnfrmPassword)) {
+            passwordED.setError("Password mismatch");
+
         }
     }
     //Email check
