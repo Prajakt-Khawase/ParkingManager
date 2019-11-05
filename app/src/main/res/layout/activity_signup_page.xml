@@ -63,6 +63,18 @@
             android:drawablePadding="10dp"
             android:singleLine="true"
             android:paddingLeft="10dp"/>
+        <EditText
+            android:id="@+id/mobileSignup"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/text_field"
+            android:layout_margin="15dp"
+
+            android:hint="Mobile number"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:inputType="number"
+            android:paddingLeft="10dp"/>
 
     </LinearLayout>
 
