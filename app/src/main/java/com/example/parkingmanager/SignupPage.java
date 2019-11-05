@@ -3,6 +3,7 @@ package com.example.parkingmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -92,7 +93,12 @@ public class SignupPage extends AppCompatActivity {
     public void appCloseAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(SignupPage.this);
         builder.setTitle("Close App?");
-
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //handle yes logic here
+                finish();
+            }
+        });
     }
     //Email check
     public static boolean isValidEmail(CharSequence email) {
