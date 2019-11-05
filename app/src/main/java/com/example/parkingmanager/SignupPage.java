@@ -50,6 +50,10 @@ public class SignupPage extends AppCompatActivity {
         {
             lnameED.setError("Enter last name");
 
+        } else if(email.isEmpty())
+        {
+            emailED.setError("Enter email");
+
         }
     }
     
