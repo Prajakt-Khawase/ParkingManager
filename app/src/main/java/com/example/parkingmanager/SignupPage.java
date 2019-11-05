@@ -35,7 +35,12 @@ public class SignupPage extends AppCompatActivity {
     }
     private void validations()
     {
-        
+        fname=fnameED.getText().toString().toLowerCase();
+        lname=lnameED.getText().toString().toLowerCase();
+        email=emailED.getText().toString().toLowerCase();
+        mobile=mobileED.getText().toString().toLowerCase();
+        password=passwordED.getText().toString().toLowerCase();
+        cnfrmPassword=cnfrmPasswordED.getText().toString().toLowerCase();
     }
     
 }
