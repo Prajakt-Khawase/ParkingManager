@@ -91,6 +91,7 @@ public class SignupPage extends AppCompatActivity {
 
     public void appCloseAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(SignupPage.this);
+        builder.setTitle("Close App?");
 
     }
     //Email check
