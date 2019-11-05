@@ -54,7 +54,11 @@ public class SignupPage extends AppCompatActivity {
         {
             emailED.setError("Enter email");
 
-        } 
+        } else if(!isValidEmail(email))
+        {
+            emailED.setError("Enter valid email");
+
+        }
     }
     //Email check
     public static boolean isValidEmail(CharSequence email) {
