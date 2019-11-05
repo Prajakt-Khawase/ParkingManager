@@ -29,6 +29,16 @@ public class SignupPage extends AppCompatActivity {
                 validations();
             }
         });
+        findViewById(R.id.signupLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent =new Intent(SignupPage.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
     
     private void initialize() {
