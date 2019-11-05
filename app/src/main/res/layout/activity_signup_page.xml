@@ -102,6 +102,21 @@
             android:inputType="textPassword"
             android:paddingLeft="10dp"/>
 
+        <Button
+            android:id="@+id/signButton"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Sign Up"
+
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:textStyle="bold"
+
+            android:background="button"/>
+
     </LinearLayout>
 
 </ScrollView>
