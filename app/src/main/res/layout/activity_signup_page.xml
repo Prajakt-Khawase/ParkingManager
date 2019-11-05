@@ -51,6 +51,19 @@
             android:drawablePadding="10dp"
             android:singleLine="true"
             android:paddingLeft="10dp"/>
+        <EditText
+            android:id="@+id/emailSignup"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/text_field"
+            android:layout_margin="15dp"
+            android:inputType="textEmailAddress"
+
+            android:hint="Email"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:paddingLeft="10dp"/>
+
     </LinearLayout>
 
 </ScrollView>
