@@ -41,6 +41,12 @@ public class SignupPage extends AppCompatActivity {
         mobile=mobileED.getText().toString().toLowerCase();
         password=passwordED.getText().toString().toLowerCase();
         cnfrmPassword=cnfrmPasswordED.getText().toString().toLowerCase();
+
+        if(fname.isEmpty())
+        {
+            fnameED.setError("Enter first name");
+
+        }
     }
     
 }
