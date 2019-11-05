@@ -10,6 +10,7 @@ import android.widget.EditText;
 public class SignupPage extends AppCompatActivity {
     EditText fnameED,lnameED,emailED,mobileED,passwordED,cnfrmPasswordED;
     String fname,lname,email,mobile,password,cnfrmPassword;
+    SQLiteHelper mSqLiteHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
