@@ -20,12 +20,11 @@ public class SignupPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_page);
         mSqLiteHelper=new SQLiteHelper(this);
-    }
-    public void signUp(View v){
-        startActivity(new Intent(SignupPage.this, MainActivity.class));
+
+        initialize();
 
     }
-
+    
     private void initialize() {
 
 
