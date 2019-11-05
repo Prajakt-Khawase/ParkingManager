@@ -58,6 +58,10 @@ public class SignupPage extends AppCompatActivity {
         {
             emailED.setError("Enter valid email");
 
+        }else if(mobile.isEmpty())
+        {
+            mobileED.setError("Enter mobile number");
+
         }
     }
     //Email check
