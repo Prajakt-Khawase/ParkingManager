@@ -137,4 +137,5 @@ public class SignupPage extends AppCompatActivity {
         return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
     
+    
 }

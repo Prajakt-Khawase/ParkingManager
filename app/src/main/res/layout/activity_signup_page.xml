@@ -37,7 +37,7 @@
             android:background="@drawable/text_field"
             android:layout_margin="15dp"
             android:hint="Firstname"
-            android:singleLine="true"
+            android:singleLine="true"     
             android:drawablePadding="5dp"
             android:paddingLeft="10dp"/>
         <EditText
