@@ -104,7 +104,18 @@ public class SignupPage extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 //nothing here
             }
+            
+            
         });
+
+        builder.show();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        appCloseAlert();
     }
     //Email check
     public static boolean isValidEmail(CharSequence email) {
