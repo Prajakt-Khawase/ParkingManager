@@ -33,5 +33,9 @@ public class SignupPage extends AppCompatActivity {
         cnfrmPasswordED=findViewById(R.id.confirm_passwordSignup);
         
     }
+    private void validations()
+    {
+        
+    }
     
 }
