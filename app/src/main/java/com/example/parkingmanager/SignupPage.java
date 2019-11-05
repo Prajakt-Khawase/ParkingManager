@@ -22,7 +22,13 @@ public class SignupPage extends AppCompatActivity {
         mSqLiteHelper=new SQLiteHelper(this);
 
         initialize();
+        findViewById(R.id.signButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                validations();
+            }
+        });
     }
     
     private void initialize() {
