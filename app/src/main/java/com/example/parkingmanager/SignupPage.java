@@ -119,8 +119,6 @@ public class SignupPage extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 //nothing here
             }
-            
-            
         });
 
         builder.show();
