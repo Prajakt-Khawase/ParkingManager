@@ -54,7 +54,11 @@ public class SignupPage extends AppCompatActivity {
         {
             emailED.setError("Enter email");
 
-        }
+        } 
+    }
+    //Email check
+    public static boolean isValidEmail(CharSequence email) {
+        return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
     
 }
