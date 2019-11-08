@@ -18,6 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:src="@drawable/logo1" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/text_field"
+            android:layout_margin="15dp"
+            android:hint="Username(email)"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:drawablePadding="5dp"
 
+            android:paddingLeft="10dp"/>
     </LinearLayout>
 </LinearLayout>
