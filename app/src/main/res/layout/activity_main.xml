@@ -30,5 +30,17 @@
             android:drawablePadding="5dp"
 
             android:paddingLeft="10dp"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/text_field"
+            android:layout_margin="15dp"
+
+            android:hint="Password"
+            android:drawablePadding="10dp"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"/>
     </LinearLayout>
 </LinearLayout>
