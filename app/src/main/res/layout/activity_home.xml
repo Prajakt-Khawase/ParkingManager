@@ -55,25 +55,68 @@
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
-
-            <Button
-        android:id="@+id/button6"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:onClick="fourwheeler"
-        android:text="Four Wheeler" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
 
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:onClick="twowheeler"
-        android:text="Two Wheeler" />
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_weight="1"
+            android:elevation="@dimen/_30sdp"
+            app:cardBackgroundColor="@color/colorPrimary"
 
-    <Button
-        android:id="@+id/button18"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:onClick="vehicleInfo"
-        android:text="Vehicle Information" />
-    </LinearLayout>
+
+            android:layout_margin="@dimen/_5sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:clickable="true"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Car\nParking"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_16sdp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+</LinearLayout>
+</LinearLayout>
+<!--            <Button-->
+<!--        android:id="@+id/button6"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:onClick="fourwheeler"-->
+<!--        android:text="Four Wheeler" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button17"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="84dp"-->
+<!--        android:onClick="twowheeler"-->
+<!--        android:text="Two Wheeler" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button18"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:onClick="vehicleInfo"-->
+<!--        android:text="Vehicle Information" />-->
+
