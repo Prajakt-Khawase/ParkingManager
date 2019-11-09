@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -70,6 +71,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-    public void logoutAlert(){}
+    public void logoutAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+
+    }
     }
 
