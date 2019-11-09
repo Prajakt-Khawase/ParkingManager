@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import static com.example.parkingmanager.SignupPage.isValidEmail;
 
@@ -77,7 +78,11 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
+            }else
+            {
+                Toast.makeText(MainActivity.this, "Invalid username password", Toast.LENGTH_SHORT).show();
             }
+
         }
     }
 
