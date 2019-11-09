@@ -49,6 +49,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentButton1 = new Intent(context, FourWheelerActivity.class);
                 startActivity(intentButton1);
                 break;
+
+            case R.id.button2:
+                Intent intentButton2 = new Intent(context, TwoWheelerActivity.class);
+                startActivity(intentButton2);
+                break;
+
         }
     }
     }
