@@ -1,6 +1,7 @@
 package com.example.parkingmanager;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -74,7 +75,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void logoutAlert(){
         AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
         builder.setTitle("Are you sure want to LOGOUT?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //handle logic here
 
+                SharedPrefrenceUtilities.setSPboolean(HomeActivity.this,SharedPrefrenceUtilities.spIsLoggedin,false);
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                finish();
+            }
+        });
     }
     }
 
