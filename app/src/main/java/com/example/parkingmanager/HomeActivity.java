@@ -73,6 +73,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void logoutAlert(){
         AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
+        builder.setTitle("Are you sure want to LOGOUT?");
 
     }
     }
