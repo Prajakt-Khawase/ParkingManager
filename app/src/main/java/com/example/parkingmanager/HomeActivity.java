@@ -42,7 +42,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         button4.setOnClickListener(this);
         logout.setOnClickListener(this);
     }
-
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        appCloseAlert();
+    }
     @Override
     public void onClick(View v) {
 
@@ -91,6 +96,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         builder.show();
+    }
+
+    public void appCloseAlert(){
+
     }
     }
 
