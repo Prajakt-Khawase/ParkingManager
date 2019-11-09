@@ -26,7 +26,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    private void initilize()
+    {
+        login = findViewById(R.id.login_button);
+        usernameED=findViewById(R.id.username);
+        passwordED=findViewById(R.id.password);
+    }
     private void validation()
     {
 
