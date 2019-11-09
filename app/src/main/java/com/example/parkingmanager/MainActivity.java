@@ -3,6 +3,7 @@ package com.example.parkingmanager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         {
             passwordED.setError("Enter password");
 
+        }else {
+
+            Cursor cursor = mSqLiteHelper.managerLogin(username, password);
         }
     }
 
