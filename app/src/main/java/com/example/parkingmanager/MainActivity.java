@@ -1,5 +1,6 @@
 package com.example.parkingmanager;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     } public void appCloseAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
     }
 
