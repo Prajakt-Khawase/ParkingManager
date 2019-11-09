@@ -99,4 +99,10 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
+
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        appCloseAlert();
+    }
 }
