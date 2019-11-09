@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
     } public void appCloseAlert(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
+        builder.setTitle("Close App?");
     }
 
 }
