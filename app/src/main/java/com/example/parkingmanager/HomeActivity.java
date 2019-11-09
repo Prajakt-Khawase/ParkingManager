@@ -55,6 +55,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intentButton2);
                 break;
 
+            case R.id.button3:
+
+                break;
+
+            case R.id.button4:
+                break;
+
+            case R.id.home_logout:
+
+                boolean status= SharedPrefrenceUtilities.getSPbooleanValue(HomeActivity.this,SharedPrefrenceUtilities.spIsLoggedin);
+
         }
     }
     }
