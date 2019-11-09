@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }else {
 
             Cursor cursor = mSqLiteHelper.managerLogin(username, password);
+            int row =  cursor.getCount();
         }
     }
 
