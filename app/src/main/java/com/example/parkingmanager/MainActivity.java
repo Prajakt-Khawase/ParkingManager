@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         {
             usernameED.setError("Enter valid username");
 
+        }else if(password.isEmpty())
+        {
+            passwordED.setError("Enter password");
+
         }
     }
 
