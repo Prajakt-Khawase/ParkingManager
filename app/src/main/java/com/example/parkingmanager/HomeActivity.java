@@ -65,8 +65,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.home_logout:
 
                 boolean status= SharedPrefrenceUtilities.getSPbooleanValue(HomeActivity.this,SharedPrefrenceUtilities.spIsLoggedin);
+                logoutAlert();
 
+                break;
         }
     }
+    public void logoutAlert(){}
     }
 
