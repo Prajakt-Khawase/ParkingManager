@@ -20,6 +20,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
     }
 
     @Override
