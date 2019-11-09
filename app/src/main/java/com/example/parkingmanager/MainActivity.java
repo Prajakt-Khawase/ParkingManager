@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import static com.example.parkingmanager.SignupPage.isValidEmail;
+
 public class MainActivity extends AppCompatActivity {
 
     Button login;
@@ -47,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
         if(username.isEmpty())
         {
             usernameED.setError("Enter username");
+        }else if(!isValidEmail(username))
+        {
+            usernameED.setError("Enter valid username");
+
         }
     }
 
