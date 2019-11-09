@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     String s4 = cursor.getString(4);//password
                     // cursor.moveToNext();
                     //Toast.makeText(MainActivity.this, row2+" "+s0 + "ID : " + s1 + " " + s2 + " " + s3 + " " + s4, Toast.LENGTH_SHORT).show();
+                    SharedPrefrenceUtilities.setSPboolean(MainActivity.this,SharedPrefrenceUtilities.spIsLoggedin,true);
                 }
             }
         }
