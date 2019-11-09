@@ -1,6 +1,7 @@
 package com.example.parkingmanager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -32,10 +33,23 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         button3=findViewById(R.id.button3);
         button4=findViewById(R.id.button4);
         logout=findViewById(R.id.home_logout);
+
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
+        button4.setOnClickListener(this);
+        logout.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.button1:
+                Intent intentButton1 = new Intent(context, FourWheelerActivity.class);
+                startActivity(intentButton1);
+                break;
+        }
     }
     }
 
