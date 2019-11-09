@@ -64,6 +64,15 @@ public class MainActivity extends AppCompatActivity {
             int row =  cursor.getCount();
             if (cursor != null && cursor.getCount() != 0) {
                 cursor.moveToFirst();
+                for (int i = 1; i <= row; i++) {
+                    String s0 = cursor.getString(0);   //id
+                    String s1 = cursor.getString(1);//name
+                    String s2 = cursor.getString(2);//email
+                    String s3 = cursor.getString(3);//mobile
+                    String s4 = cursor.getString(4);//password
+                    // cursor.moveToNext();
+                    //Toast.makeText(MainActivity.this, row2+" "+s0 + "ID : " + s1 + " " + s2 + " " + s3 + " " + s4, Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
