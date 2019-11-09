@@ -27,7 +27,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
         }
 
-
+        button1=findViewById(R.id.button1);
+        button2=findViewById(R.id.button2);
+        button3=findViewById(R.id.button3);
+        button4=findViewById(R.id.button4);
+        logout=findViewById(R.id.home_logout);
     }
 
     @Override
