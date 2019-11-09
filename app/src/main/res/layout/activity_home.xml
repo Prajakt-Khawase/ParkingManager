@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical">
 
-    <Button
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+
+
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:orientation="vertical"
+                android:layout_marginRight="@dimen/_10sdp">
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/home_category"
+
+                    android:textColor="#ffffff"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Parking Manager"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+            <Button
         android:id="@+id/button6"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -23,5 +65,4 @@
         android:layout_height="80dp"
         android:onClick="vehicleInfo"
         android:text="Vehicle Information" />
-
-</LinearLayout>
+    </LinearLayout>
