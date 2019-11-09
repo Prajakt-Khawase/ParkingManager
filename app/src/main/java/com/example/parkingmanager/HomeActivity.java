@@ -99,6 +99,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void appCloseAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
 
     }
     }
