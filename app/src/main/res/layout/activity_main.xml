@@ -70,10 +70,11 @@
                 android:id="@+id/loginSignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clickable="false"
                 android:text="Sign Up"
                 android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                android:layout_margin="5dp"/>
+                android:textStyle="bold" />
     </LinearLayout>
     </LinearLayout>
 </LinearLayout>
