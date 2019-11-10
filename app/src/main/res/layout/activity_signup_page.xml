@@ -65,28 +65,28 @@
         <EditText
             android:id="@+id/mobileSignup"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/_35sdp"
             android:background="@drawable/text_field"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/_15sdp"
 
             android:hint="Mobile number"
-            android:drawablePadding="10dp"
+            android:drawablePadding="@dimen/_10sdp"
             android:singleLine="true"
             android:inputType="number"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="@dimen/_10sdp"/>
 
         <EditText
             android:id="@+id/passwordSignup"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/_35sdp"
             android:background="@drawable/text_field"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/_15sdp"
 
             android:hint="Password"
-            android:drawablePadding="10dp"
+            android:drawablePadding="@dimen/_10sdp"
             android:singleLine="true"
             android:inputType="textPassword"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="@dimen/_10sdp"/>
 
         <EditText
             android:id="@+id/confirm_passwordSignup"
