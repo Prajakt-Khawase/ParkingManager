@@ -33,13 +33,13 @@
         <EditText
             android:id="@+id/fnameSignup"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/_35sdp"
             android:background="@drawable/text_field"
             android:layout_margin="15dp"
             android:hint="Firstname"
             android:singleLine="true"
-            android:drawablePadding="5dp"
-            android:paddingLeft="10dp"/>
+            android:drawablePadding="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_10sdp"/>
         <EditText
             android:id="@+id/lnameSignup"
             android:layout_width="match_parent"
