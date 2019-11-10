@@ -43,14 +43,14 @@
         <EditText
             android:id="@+id/lnameSignup"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/_35sdp"
             android:background="@drawable/text_field"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/_15sdp"
 
             android:hint="Lastname"
-            android:drawablePadding="10dp"
+            android:drawablePadding="@dimen/_10sdp"
             android:singleLine="true"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="@dimen/_10sdp"/>
         <EditText
             android:id="@+id/emailSignup"
             android:layout_width="match_parent"
@@ -58,7 +58,6 @@
             android:background="@drawable/text_field"
             android:layout_margin="15dp"
             android:inputType="textEmailAddress"
-
             android:hint="Email"
             android:drawablePadding="10dp"
             android:singleLine="true"
