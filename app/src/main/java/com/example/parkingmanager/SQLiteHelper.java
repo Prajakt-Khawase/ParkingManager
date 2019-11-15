@@ -115,7 +115,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_BOOKING, null );
         return res;
-
     }
 
     public Cursor managerLogin(String username, String password) {
@@ -132,4 +131,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return c;
     }
 
+    public Cursor k(String type) {
+
+    }
 }
