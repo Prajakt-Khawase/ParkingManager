@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText usernameED, passwordED;
     String username, password;
     SQLiteHelper mSqLiteHelper;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,9 +109,12 @@ public class MainActivity extends AppCompatActivity {
         return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
+    @Override
     public void onBackPressed()
     {
+        if (doubleBackToExitPressedOnce) {
         super.onBackPressed();
-        appCloseAlert();
+        return;
+    }
     }
 }
