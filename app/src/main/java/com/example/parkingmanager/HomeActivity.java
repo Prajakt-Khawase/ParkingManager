@@ -64,7 +64,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         boolean slotCreation=SharedPrefrenceUtilities.getSPbooleanValue(context,SharedPrefrenceUtilities.spSlotTableCreationStatus);
 
+        if(!slotCreation)
+        {
+            try {
+                for (int i = 1; i <= 20; i++) {
 
+                    String slotType="BIKE";
+                    mSQLiteHelper.insertSlotRecord(i,false,slotType);
+                }
+            } catch (Exception e){
+
+            }
     }
 
         @Override
