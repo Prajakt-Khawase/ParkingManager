@@ -68,6 +68,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     //For slot table slot insert record
     public void insertSlotRecord(int no, boolean status, String type) {
         database = this.getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_SLOT_NO, no);
 
     }
 
