@@ -158,6 +158,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     //to release slot
     public void releaseSlotDetail(String id, boolean status, String outDatetime, int charge)
     {
+        SQLiteDatabase db = this.getReadableDatabase();
 
     }
 
