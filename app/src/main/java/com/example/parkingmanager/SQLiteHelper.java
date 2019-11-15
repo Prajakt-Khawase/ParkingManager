@@ -136,4 +136,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         Cursor res =  db.rawQuery( "SELECT * FROM BOOKINGS WHERE TRIM(TYPE) = '"+type.trim()+"'", null );
         return res;
     }
+
+    public Cursor getSlotDetail(String type) {
+
+    }
 }
