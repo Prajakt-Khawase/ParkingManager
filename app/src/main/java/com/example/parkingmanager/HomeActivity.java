@@ -20,6 +20,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     Button button1,button2,button3,button4;
     ImageView logout;
     SQLiteHelper mSQLiteHelper;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +57,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         button4.setOnClickListener(this);
         logout.setOnClickListener(this);
     }
+
     @Override
-    public void onBackPressed()
-    {
-        super.onBackPressed();
-        appCloseAlert();
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
     }
-    @Override
+
+        @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
@@ -128,5 +132,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         });
         builder.show();
     }
+
+
 
 }
