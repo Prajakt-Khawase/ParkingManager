@@ -172,6 +172,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] coulmnNames = new String[] {COLUMN_ID,TABLE_SLOT_NO,TABLE_OWNER_NAME,TABLE_MOBILE_NO,TABLE_VEHICLE_NO,TABLE_IN_DATE_TIME,TABLE_OUT_DATE_TIME,TABLE_MANAGER_NAME,TABLE_VEHICLE_TYPE,TABLE_BOOKING_STATUS};
         String whereClause = TABLE_SLOT_NO + " = ? AND " + TABLE_VEHICLE_TYPE  + " = ? AND " + TABLE_BOOKING_STATUS  + " = ? ";
-
+        String[] params = new String[] {slotno, type, status};
+        Cursor c = db.query(TABLE_NAME_BOOKING, coulmnNames, whereClause, params, null, null, null);
     }
 }
