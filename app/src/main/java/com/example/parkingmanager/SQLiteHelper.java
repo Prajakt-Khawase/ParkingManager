@@ -70,6 +70,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         database = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_SLOT_NO, no);
+        contentValues.put(COLUMN_BOOKING_STATUS, status);
+        contentValues.put(COLUMN_SLOT_TYPE, type);
 
     }
 
