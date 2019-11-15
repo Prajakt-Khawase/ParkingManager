@@ -110,6 +110,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    //get slot record
+    public Cursor getAllSlotRecord() {
+
+    }
+
     public Cursor managerLogin(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
 
