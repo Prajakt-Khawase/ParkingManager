@@ -78,7 +78,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     //    //for booking record
     public void insertBookingRecord(int slotno, String owner, String mobile, String email, String vehicle, String intime, String outtime, String manager, String type, boolean  status) {
         database = this.getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
 
+
+        database.insert(TABLE_NAME_BOOKING, null, contentValues);
+        database.close();
     }
 
     @Override
