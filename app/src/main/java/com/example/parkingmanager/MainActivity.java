@@ -10,10 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast; 
-
-import static com.example.parkingmanager.SignupPage.isValidEmail;
-
+import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     Button login;
@@ -43,13 +40,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void initilize() {
-        login = findViewById(R.id.login_button);
-        usernameED = findViewById(R.id.username);
-        passwordED = findViewById(R.id.password);
-    }
 
-    private void validation() {
+        private void validation() {
 
         username = usernameED.getText().toString().toLowerCase();
         password = passwordED.getText().toString().toLowerCase();
@@ -86,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+    }
+    private void initilize() {
+        login = findViewById(R.id.login_button);
+        usernameED = findViewById(R.id.username);
+        passwordED = findViewById(R.id.password);
     }
 
     public void appCloseAlert() {
