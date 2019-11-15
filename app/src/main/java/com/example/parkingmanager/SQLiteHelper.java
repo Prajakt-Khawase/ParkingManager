@@ -152,8 +152,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_SLOT_NO, no);
         contentValues.put(COLUMN_BOOKING_STATUS, status);
         contentValues.put(COLUMN_SLOT_TYPE, type);
-
         db.update(TABLE_NAME_SLOT, contentValues, "ID = ?", new String[]{id});
+    }
+
+    //to release slot
+    public void releaseSlotDetail(String id, boolean status, String outDatetime, int charge)
+    {
 
     }
+
 }
