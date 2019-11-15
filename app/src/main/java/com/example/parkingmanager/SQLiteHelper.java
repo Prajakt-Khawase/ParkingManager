@@ -146,6 +146,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     //update slot detail
     public void updateBikeSlotDetail(String id, String no, boolean status, String type)
     {
+        SQLiteDatabase db = this.getReadableDatabase();
+
 
     }
 }
