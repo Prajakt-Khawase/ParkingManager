@@ -160,7 +160,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
-
+        contentValues.put(TABLE_OUT_DATE_TIME, outDatetime);
+        contentValues.put(TABLE_BOOKING_STATUS, status);
+        contentValues.put(TABLE_PARKING_CHARGE, charge);
     }
 
 }
