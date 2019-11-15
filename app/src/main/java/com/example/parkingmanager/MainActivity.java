@@ -103,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
+    //Email check
+    public static boolean isValidEmail(CharSequence email) {
+        return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
 
     public void onBackPressed()
     {
