@@ -11,6 +11,7 @@ public class SharedPrefrenceUtilities {
     public static final String spEmail = "email";
     public static final String spUserId = "userId";
     public static final String spMobileNo = "mobileNo";
+    public static final String spSlotTableCreationStatus = "slotTableRecordCreationStatus";
 
     //Store string using Shared Preference
     public static void setSPstring(Context mContext, String key, String value) {

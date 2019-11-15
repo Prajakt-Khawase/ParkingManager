@@ -47,7 +47,7 @@ public class FourWheelerActivity extends AppCompatActivity {
         slotList.add("SLOT 25");
 
         mAdapter = new FourWheelerAdapter(context, slotList);
-        gridView = (GridView) findViewById(R.id.gridview);
+        gridView = (GridView) findViewById(R.id.GridView);
         gridView.setAdapter(mAdapter);
 
     }
