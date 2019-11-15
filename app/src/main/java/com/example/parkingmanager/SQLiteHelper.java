@@ -79,8 +79,18 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void insertBookingRecord(int slotno, String owner, String mobile, String email, String vehicle, String intime, String outtime, String manager, String type, boolean  status) {
         database = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
-
-
+        contentValues.put(TABLE_SLOT_NO, slotno);
+        contentValues.put(TABLE_OWNER_NAME, owner);
+        contentValues.put(TABLE_MOBILE_NO, mobile);
+        contentValues.put(TABLE_MOBILE_NO, mobile);
+        contentValues.put(TABLE_EMAIL, email);
+        contentValues.put(TABLE_VEHICLE_NO, vehicle);
+        contentValues.put(TABLE_IN_DATE_TIME, intime);
+        contentValues.put(TABLE_OUT_DATE_TIME, outtime);
+        contentValues.put(TABLE_MANAGER_NAME, manager);
+        contentValues.put(TABLE_VEHICLE_TYPE, type);
+        contentValues.put(TABLE_BOOKING_STATUS, status);
+        contentValues.put(TABLE_PARKING_CHARGE, "");
         database.insert(TABLE_NAME_BOOKING, null, contentValues);
         database.close();
     }
