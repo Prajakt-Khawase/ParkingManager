@@ -114,6 +114,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public Cursor getAllSlotRecord() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_BOOKING, null );
+        return res;
 
     }
 
