@@ -113,6 +113,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     //get slot record
     public Cursor getAllSlotRecord() {
         SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_BOOKING, null );
 
     }
 
