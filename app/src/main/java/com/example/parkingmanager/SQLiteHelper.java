@@ -84,7 +84,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(TABLE_MANAGER_NAME, manager);
         contentValues.put(TABLE_VEHICLE_TYPE, type);
         contentValues.put(TABLE_BOOKING_STATUS, status);
-        contentValues.put(TABLE_PARKING_CHARGE, "");
+        contentValues.put(TABLE_PARKING_CHARGE, "NA");
         database.insert(TABLE_NAME_BOOKING, null, contentValues);
         database.close();
     }
@@ -93,6 +93,12 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + TABLE_NAME_MANAGER + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_NAME + " VARCHAR," + COLUMN_EMAIL + " VARCHAR," + COLUMN_MOBILE + " VARCHAR," +
                 COLUMN_PASSWORD + " VARCHAR);");
+        db.execSQL("create table " + TABLE_NAME_SLOT + " ( " + COLUMN_ID +
+                " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_SLOT_NO + " " +
+                "VARCHAR," + COLUMN_BOOKING_STATUS + " VARCHAR," + COLUMN_SLOT_TYPE + " VARCHAR);");
+
+
+
     }
 
 
