@@ -142,4 +142,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         Cursor res =  db.rawQuery( "SELECT * FROM SLOTS WHERE TRIM(TYPE) = '"+type.trim()+"'", null );
         return res;
     }
+
+    //update slot detail
+    public void updateBikeSlotDetail(String id, String no, boolean status, String type)
+    {
+
+    }
 }
