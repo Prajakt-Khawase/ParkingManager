@@ -112,6 +112,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     //get slot record
     public Cursor getAllSlotRecord() {
+        SQLiteDatabase db = this.getReadableDatabase();
 
     }
 
