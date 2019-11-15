@@ -132,6 +132,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public Cursor k(String type) {
-
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "SELECT * FROM BOOKINGS WHERE TRIM(TYPE) = '"+type.trim()+"'", null );
+        return res;
     }
 }
