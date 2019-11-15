@@ -30,6 +30,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_BOOKING = "BOOKINGS";
     public static final String TABLE_SLOT_NO = "SLOTNO";
     public static final String TABLE_OWNER_NAME = "OWNER";
+    public static final String TABLE_MOBILE_NO = "MOBILE_NO";
+    public static final String TABLE_EMAIL = "EMAIL";
+    public static final String TABLE_VEHICLE_NO = "VEHICLE_NO";
+    public static final String TABLE_IN_DATE_TIME = "IN_DATE_TIME";
+    public static final String TABLE_OUT_DATE_TIME = "OUT_DATE_TIME";
+    public static final String TABLE_MANAGER_NAME = "MANAGER";
+    public static final String TABLE_VEHICLE_TYPE = "SLOT_TYPE";
+    public static final String TABLE_BOOKING_STATUS = "STATUS";
+    public static final String TABLE_PARKING_CHARGE = "CHARGE";
+
 
     private SQLiteDatabase database;
     public SQLiteHelper(Context context) {
