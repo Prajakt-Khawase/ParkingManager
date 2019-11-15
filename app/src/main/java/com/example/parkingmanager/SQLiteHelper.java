@@ -138,6 +138,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getSlotDetail(String type) {
+        SQLiteDatabase db = this.getReadableDatabase();
 
     }
 }
