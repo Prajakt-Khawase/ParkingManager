@@ -103,6 +103,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //get all manager data
+    public Cursor getAllManagerData() {
+
+    }
 
     public Cursor managerLogin(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
