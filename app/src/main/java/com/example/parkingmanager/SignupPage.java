@@ -15,6 +15,8 @@ public class SignupPage extends AppCompatActivity {
     EditText fnameED,lnameED,emailED,mobileED,passwordED,cnfrmPasswordED;
     String fname,lname,email,mobile,password,cnfrmPassword;
     SQLiteHelper mSqLiteHelper;
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,11 +138,14 @@ public class SignupPage extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
+       
         if (doubleBackToExitPressedOnce) {
-            
+            super.onBackPressed();
+            return;
+        }
         }
             
         }
     
     
-}
+
