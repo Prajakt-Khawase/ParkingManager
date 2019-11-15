@@ -10,6 +10,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "SQLiteDatabase.db";
+
+
     // Creating Attributes for Manager Table.
     public static final String TABLE_NAME_MANAGER = "MANAGER";
     public static final String COLUMN_ID = "ID";
@@ -17,11 +19,15 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_MOBILE = "MOBILE";
     public static final String COLUMN_PASSWORD = "PASWWORD";
     public static final String COLUMN_NAME = "NAME";
-    private SQLiteDatabase database;
+
     //Slot Booking Table
     public static final String TABLE_NAME_BOOKING = "BOOKING";
+    public static final String TABLE_NAME_SLOT = "SLOTS";
+    public static final String COLUMN_SLOT_NO = "NO";
+    public static final String COLUMN_BOOKING_STATUS = "STATUS";
+    public static final String COLUMN_SLOT_TYPE = "TYPE";
 
-
+    private SQLiteDatabase database;
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         // TODO Auto-generated constructor stub
