@@ -21,11 +21,15 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_NAME = "NAME";
 
     //Slot Booking Table
-    public static final String TABLE_NAME_BOOKING = "BOOKING";
     public static final String TABLE_NAME_SLOT = "SLOTS";
     public static final String COLUMN_SLOT_NO = "NO";
     public static final String COLUMN_BOOKING_STATUS = "STATUS";
     public static final String COLUMN_SLOT_TYPE = "TYPE";
+
+    //Booking table
+    public static final String TABLE_NAME_BOOKING = "BOOKINGS";
+    public static final String TABLE_SLOT_NO = "SLOTNO";
+    public static final String TABLE_OWNER_NAME = "OWNER";
 
     private SQLiteDatabase database;
     public SQLiteHelper(Context context) {
