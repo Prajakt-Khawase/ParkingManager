@@ -16,19 +16,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
-    Context context= HomeActivity.this;
+    Context context;
     Button button1,button2,button3,button4;
     ImageView logout;
+    SQLiteHelper mSQLiteHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        context=HomeActivity.this;
         Window window = getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
         }
+
+        mSQLiteHelper=new SQLiteHelper(this);
+        initialize();
+
+
+
+
+    }
+
+    private void initialize() {
+
 
         button1=findViewById(R.id.button1);
         button2=findViewById(R.id.button2);
