@@ -72,7 +72,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_SLOT_NO, no);
         contentValues.put(COLUMN_BOOKING_STATUS, status);
         contentValues.put(COLUMN_SLOT_TYPE, type);
-
+        database.insert(TABLE_NAME_SLOT, null, contentValues);
+        database.close();
     }
 
     @Override
