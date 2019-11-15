@@ -105,6 +105,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     //get all manager data
     public Cursor getAllManagerData() {
+        SQLiteDatabase db = this.getReadableDatabase();
 
     }
 
