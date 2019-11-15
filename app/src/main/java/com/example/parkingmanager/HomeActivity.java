@@ -60,7 +60,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         logout.setOnClickListener(this);
     }
 
-    @Override
+    private void createSlotTable() {
+
+        boolean slotCreation=SharedPrefrenceUtilities.getSPbooleanValue(context,SharedPrefrenceUtilities.spSlotTableCreationStatus);
+
+
+    }
+
+        @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
