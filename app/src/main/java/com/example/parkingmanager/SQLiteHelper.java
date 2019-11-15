@@ -166,5 +166,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.update(TABLE_NAME_BOOKING, contentValues, "ID = ?", new String[]{id});
 
     }
-
+    ///get booked data
+    public Cursor getSlotDetail(String slotno, String type, String status)
+    {
+       
+    }
 }
