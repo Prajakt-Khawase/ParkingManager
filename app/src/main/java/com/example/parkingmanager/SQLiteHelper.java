@@ -174,5 +174,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         String whereClause = TABLE_SLOT_NO + " = ? AND " + TABLE_VEHICLE_TYPE  + " = ? AND " + TABLE_BOOKING_STATUS  + " = ? ";
         String[] params = new String[] {slotno, type, status};
         Cursor c = db.query(TABLE_NAME_BOOKING, coulmnNames, whereClause, params, null, null, null);
+        return c;
+
     }
 }
