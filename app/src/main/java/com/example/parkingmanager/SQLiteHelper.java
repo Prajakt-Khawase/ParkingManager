@@ -163,6 +163,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(TABLE_OUT_DATE_TIME, outDatetime);
         contentValues.put(TABLE_BOOKING_STATUS, status);
         contentValues.put(TABLE_PARKING_CHARGE, charge);
+        db.update(TABLE_NAME_BOOKING, contentValues, "ID = ?", new String[]{id});
+
     }
 
 }
