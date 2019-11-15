@@ -1,8 +1,8 @@
 package com.example.parkingmanager;
 
-import androidx.appcompat.app.AlertDialog;
+import android.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.os.Handler;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 validation();
-
             }
         });
         findViewById(R.id.loginSignup).setOnClickListener(new View.OnClickListener() {
@@ -43,10 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
-
-
     private void initilize() {
         login = findViewById(R.id.login_button);
         usernameED = findViewById(R.id.username);
@@ -79,11 +74,12 @@ public class MainActivity extends AppCompatActivity {
                     String s4 = cursor.getString(4);//password
                     // cursor.moveToNext();
                     //Toast.makeText(MainActivity.this, row2+" "+s0 + "ID : " + s1 + " " + s2 + " " + s3 + " " + s4, Toast.LENGTH_SHORT).show();
+                }
                     SharedPrefrenceUtilities.setSPboolean(MainActivity.this, SharedPrefrenceUtilities.spIsLoggedin, true);
                     Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish();
-                }
+
             } else {
                 Toast.makeText(MainActivity.this, "Invalid username password", Toast.LENGTH_SHORT).show();
             }
