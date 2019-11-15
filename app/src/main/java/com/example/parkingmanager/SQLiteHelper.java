@@ -42,6 +42,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
 
     private SQLiteDatabase database;
+
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         // TODO Auto-generated constructor stub
@@ -62,6 +63,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_PASSWORD, password);
         database.insert(TABLE_NAME_MANAGER, null, contentValues);
         database.close();
+    }
+
+    //For slot table slot insert record
+    public void insertSlotRecord(int no, boolean status, String type) {
+
     }
 
     @Override
