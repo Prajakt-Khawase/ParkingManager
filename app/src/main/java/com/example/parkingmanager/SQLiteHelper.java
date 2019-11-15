@@ -75,6 +75,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_NAME_SLOT, null, contentValues);
         database.close();
     }
+    //    //for booking record
+    public void insertBookingRecord(int slotno, String owner, String mobile, String email, String vehicle, String intime, String outtime, String manager, String type, boolean  status) {
+
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
