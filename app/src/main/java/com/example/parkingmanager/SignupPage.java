@@ -134,6 +134,13 @@ public class SignupPage extends AppCompatActivity {
     public static boolean isValidEmail(CharSequence email) {
         return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            
+        }
+            
+        }
     
     
 }
