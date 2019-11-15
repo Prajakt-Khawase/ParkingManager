@@ -107,7 +107,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public Cursor getAllManagerData() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_MANAGER, null );
-
+        return res;
     }
 
     public Cursor managerLogin(String username, String password) {
