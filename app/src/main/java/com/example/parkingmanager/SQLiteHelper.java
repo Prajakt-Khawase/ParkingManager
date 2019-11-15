@@ -148,6 +148,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = this.getReadableDatabase();
 
+        ContentValues contentValues = new ContentValues();
 
     }
 }
