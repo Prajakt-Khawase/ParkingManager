@@ -96,12 +96,14 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + TABLE_NAME_SLOT + " ( " + COLUMN_ID +
                 " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_SLOT_NO + " " +
                 "VARCHAR," + COLUMN_BOOKING_STATUS + " VARCHAR," + COLUMN_SLOT_TYPE + " VARCHAR);");
-
-
-
+        db.execSQL("create table " + TABLE_NAME_BOOKING + " ( " +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_SLOT_NO +
+                " VARCHAR," + TABLE_OWNER_NAME + " VARCHAR," + TABLE_MOBILE_NO + " VARCHAR,"
+                + TABLE_EMAIL + " VARCHAR," + TABLE_VEHICLE_NO + " VARCHAR," + TABLE_IN_DATE_TIME
+                + " VARCHAR," + TABLE_OUT_DATE_TIME + " VARCHAR," + TABLE_MANAGER_NAME + " VARCHAR,"
+                + TABLE_VEHICLE_TYPE + " VARCHAR," + TABLE_BOOKING_STATUS + " VARCHAR,"
+                + TABLE_PARKING_CHARGE + " VARCHAR);");
     }
-
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
