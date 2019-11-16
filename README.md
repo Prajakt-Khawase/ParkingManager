@@ -43,7 +43,7 @@ Existing parking system consist of many disadvantages. The systems only provide 
 
 8. Logout: - user can logout from the application.
 
-![Logout](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Logout.png)
+![Logout](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/logoutapplication.PNG)
 
 ## Risky Components of the App
 Merge conflicts may occur
