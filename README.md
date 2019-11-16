@@ -33,12 +33,15 @@ Existing parking system consist of many disadvantages. The systems only provide 
 
 ![Bookslot](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/slotbookdetail.PNG)
 
+6. Rate card Activity: - Users can view the rate card for the hourd they parked.
 
-6. Payment Activity: - This activity will open to get payment from user.
+![Rate Card](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Ratecard.PNG)
 
-![PaymentPage](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Payment.png)
+7. Payment Activity: - This activity will open to get payment from user.
 
-6. Customer Logout: - Customer can logout from this Activity.
+![PaymentPage](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/paymentpage.PNG)
+
+8. Logout: - user can logout from the application.
 
 ![Logout](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/Logout.png)
 
