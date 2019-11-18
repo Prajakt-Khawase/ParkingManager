@@ -105,7 +105,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.button3:
-
+                Intent intentButton3 = new Intent(context, RateCardActivity.class);
+                startActivity(intentButton3);
                 break;
 
             case R.id.button4:
