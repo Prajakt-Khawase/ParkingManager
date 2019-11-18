@@ -170,19 +170,118 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_5sdp"/>
 
+        <TextView
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Car Parking"
+            android:gravity="center"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="@dimen/_5sdp"/>
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="00 Hr to 08 Hr"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15sdp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:text="$04"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15sdp"
+
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/_15sdp"
+
+                android:text="08 Hr to 16 Hr"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:text="$08"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:gravity="center"
+
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="@dimen/_5sdp"/>
+            android:layout_margin="@dimen/_5sdp">
 
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="1 Day"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15sdp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:text="$10"
+                android:textSize="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:gravity="center"
+
+
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+        <View
+
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"/>
 
     </LinearLayout>
 
