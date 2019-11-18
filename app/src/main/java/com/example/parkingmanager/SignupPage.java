@@ -127,12 +127,7 @@ public class SignupPage extends AppCompatActivity {
         builder.show();
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        super.onBackPressed();
-        appCloseAlert();
-    }
+
     //Email check
     public static boolean isValidEmail(CharSequence email) {
         return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
