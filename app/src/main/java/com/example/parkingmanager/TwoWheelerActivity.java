@@ -40,6 +40,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
         }
         mSQLiteHelper=new SQLiteHelper(this);
+        slotModels=new ArrayList<>();
 
 
         slotList=new ArrayList<>();
