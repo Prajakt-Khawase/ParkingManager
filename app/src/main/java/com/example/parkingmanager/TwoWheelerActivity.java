@@ -31,6 +31,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_wheeler_parking);
+        Window window = getWindow();
 
         slotList=new ArrayList<>();
         slotList.add("SLOT 1");
