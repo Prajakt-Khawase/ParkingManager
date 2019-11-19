@@ -55,7 +55,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         if (cursor != null && cursor.getCount() != 0) {
             cursor.moveToFirst();
             for (int i = 1; i <= row; i++) {
-                
+                TwoWheelerActivity.SlotModel object = new TwoWheelerActivity.SlotModel();
             }
 
         }
@@ -88,5 +88,8 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(mAdapter);
 
+    }
+
+    public class SlotModel {
     }
 }
