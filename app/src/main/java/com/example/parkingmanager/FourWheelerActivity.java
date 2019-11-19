@@ -51,4 +51,7 @@ public class FourWheelerActivity extends AppCompatActivity {
         gridView.setAdapter(mAdapter);
 
     }
+
+    public class SlotModel {
+    }
 }

@@ -26,6 +26,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     private GridView gridView;
     Context context= TwoWheelerActivity.this;
     SQLiteHelper mSQLiteHelper;
+    ArrayList<FourWheelerActivity.SlotModel> slotModels;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
