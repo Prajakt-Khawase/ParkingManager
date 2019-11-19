@@ -41,6 +41,10 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         }
         mSQLiteHelper=new SQLiteHelper(this);
         slotModels=new ArrayList<>();
+        findViewById(R.id.bikeslot_back).setOnClickListener(new View.OnClickListener() {
+
+            
+        });
 
 
         slotList=new ArrayList<>();
