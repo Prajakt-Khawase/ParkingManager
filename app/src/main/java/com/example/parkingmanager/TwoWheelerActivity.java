@@ -54,6 +54,9 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         int row =  cursor.getCount();
         if (cursor != null && cursor.getCount() != 0) {
             cursor.moveToFirst();
+            for (int i = 1; i <= row; i++) {
+                
+            }
 
         }
 
