@@ -58,6 +58,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 TwoWheelerActivity.SlotModel object = new TwoWheelerActivity.SlotModel();
                 int s0 = cursor.getInt(0);   //id
                 int s1 = cursor.getInt(1);//name
+                int s2 = cursor.getInt(2);//email
             }
 
         }
