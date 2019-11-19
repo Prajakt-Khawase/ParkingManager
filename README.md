@@ -9,6 +9,8 @@ Purpose of this application is to give customer hassle free parking experience
 
 ## App Logo
 
+![Applogo](https://github.com/Prajakt-Khawase/ParkingManager/blob/master/logo.PNG)
+
 ## Test Crendentials
 In this application the user need to register using first name, last name, email address and mobilenumber and user can create a password.Using Email and password the user can login into the application.
 
