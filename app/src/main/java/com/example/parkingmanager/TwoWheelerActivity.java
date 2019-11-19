@@ -51,6 +51,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         });
         // Cursor cursor = mSQLiteHelper.getAllSlotRecord();
         Cursor cursor = mSQLiteHelper.getSlotDetail("BIKE");
+        int row =  cursor.getCount();
 
 
         slotList=new ArrayList<>();
