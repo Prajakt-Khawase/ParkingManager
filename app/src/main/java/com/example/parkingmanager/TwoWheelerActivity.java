@@ -56,6 +56,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
             cursor.moveToFirst();
             for (int i = 1; i <= row; i++) {
                 TwoWheelerActivity.SlotModel object = new TwoWheelerActivity.SlotModel();
+                int s0 = cursor.getInt(0);   //id
             }
 
         }
