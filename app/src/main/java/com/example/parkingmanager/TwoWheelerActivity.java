@@ -46,7 +46,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
             @Override
             public void onClick(View view) {
-                
+                finish();
             }
         });
 
