@@ -39,6 +39,8 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
 
         }
+        mSQLiteHelper=new SQLiteHelper(this);
+
 
         slotList=new ArrayList<>();
         slotList.add("SLOT 1");
