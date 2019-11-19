@@ -55,5 +55,6 @@ public class FourWheelerActivity extends AppCompatActivity {
     public static class SlotModel {
         public int id;
         public int slotno;
+        public int status;
     }
 }

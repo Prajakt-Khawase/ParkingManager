@@ -63,6 +63,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
                 object.id=s0;
                 object.slotno=s1;
+                object.status=s2;
                 
             }
 
