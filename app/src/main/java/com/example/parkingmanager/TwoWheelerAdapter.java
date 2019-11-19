@@ -39,6 +39,9 @@ public class TwoWheelerAdapter extends BaseAdapter {
         return 0;
     }
 
+    public interface SlotClickListnerDownload {
+    }
+
     public static class ViewHolder
     {
         public ImageView imgViewFlag;

@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class TwoWheelerActivity extends AppCompatActivity {
+public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerAdapter.SlotClickListnerDownload{
 
 
     private TwoWheelerAdapter mAdapter;
