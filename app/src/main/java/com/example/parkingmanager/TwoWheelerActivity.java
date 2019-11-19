@@ -59,6 +59,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 int s0 = cursor.getInt(0);   //id
                 int s1 = cursor.getInt(1);//name
                 int s2 = cursor.getInt(2);//email
+                String s3 = cursor.getString(3);//mobile
             }
 
         }
