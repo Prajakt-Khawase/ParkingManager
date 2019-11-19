@@ -55,13 +55,14 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         if (cursor != null && cursor.getCount() != 0) {
             cursor.moveToFirst();
             for (int i = 1; i <= row; i++) {
-                TwoWheelerActivity.SlotModel object = new TwoWheelerActivity.SlotModel();
+                FourWheelerActivity.SlotModel object = new FourWheelerActivity.SlotModel();
                 int s0 = cursor.getInt(0);   //id
                 int s1 = cursor.getInt(1);//name
                 int s2 = cursor.getInt(2);//email
                 String s3 = cursor.getString(3);//mobile
 
                 object.id=s0;
+                object.slotno=s1;
                 
             }
 
@@ -97,7 +98,5 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
     }
 
-    public class SlotModel {
-        public int id;
-    }
+
 }
