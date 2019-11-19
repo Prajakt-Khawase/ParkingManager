@@ -32,6 +32,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_wheeler_parking);
         Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
         slotList=new ArrayList<>();
         slotList.add("SLOT 1");
