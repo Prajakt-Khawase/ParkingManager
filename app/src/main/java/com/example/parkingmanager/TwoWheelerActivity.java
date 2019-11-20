@@ -67,7 +67,9 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 object.type=s3;
                 cursor.moveToNext();
                 slotModels.add(object);
-                
+                // Toast.makeText(TwoWheelerActivity.this, row + " " + s0 + "ID : " + s1 + " " + s2 + " " + s3 + " ", Toast.LENGTH_SHORT).show();
+
+
             }
 
         }
