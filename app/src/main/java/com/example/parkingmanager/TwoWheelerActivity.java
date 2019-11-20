@@ -73,6 +73,10 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
             }
 
         }
+        try {
+
+        }catch (Exception e){}
+    }
 
 
         slotList=new ArrayList<>();
