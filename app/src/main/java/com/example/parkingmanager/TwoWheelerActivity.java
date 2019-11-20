@@ -65,6 +65,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 object.slotno=s1;
                 object.status=s2;
                 object.type=s3;
+                cursor.moveToNext();
                 
             }
 
