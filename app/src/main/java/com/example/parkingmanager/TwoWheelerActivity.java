@@ -79,7 +79,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
            mAdapter.setSlotClickListnerDownload(TwoWheelerActivity.this);
             //Set custom adapter to gridview
             gridView = (GridView) findViewById(R.id.gridview);
-           // gridView.setAdapter(mAdapter);
+            gridView.setAdapter(mAdapter);
         }catch (Exception e){}
     }
 
