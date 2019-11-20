@@ -18,7 +18,7 @@ public class TwoWheelerAdapter extends BaseAdapter {
 
     Context context;
 
-    public TwoWheelerAdapter(Context context, ArrayList<String> slotList) {
+    public TwoWheelerAdapter(Context context, ArrayList<FourWheelerActivity.SlotModel> slotList) {
         super();
         this.slotList = slotList;
         this.context = context;
@@ -37,6 +37,9 @@ public class TwoWheelerAdapter extends BaseAdapter {
     @Override
     public long getItemId(int i) {
         return 0;
+    }
+
+    public void setSlotClickListnerDownload(TwoWheelerActivity twoWheelerActivity) {
     }
 
     public interface SlotClickListnerDownload {

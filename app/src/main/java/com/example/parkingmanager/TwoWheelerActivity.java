@@ -74,39 +74,17 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
         }
         try {
-
+            // prepared arraylist and passed it to the Adapter class
+            mAdapter = new TwoWheelerAdapter(context, slotModels);
+           // mAdapter.setSlotClickListnerDownload(TwoWheelerActivity.this);
+            // Set custom adapter to gridview
+            //gridView = (GridView) findViewById(R.id.gridview);
+           // gridView.setAdapter(mAdapter);
         }catch (Exception e){}
     }
 
 
-        slotList=new ArrayList<>();
-        slotList.add("SLOT 1");
-        slotList.add("SLOT 2");
-        slotList.add("SLOT 3");
-        slotList.add("SLOT 4");
-        slotList.add("SLOT 5");
-        slotList.add("SLOT 6");
-        slotList.add("SLOT 7");
-        slotList.add("SLOT 8");
-        slotList.add("SLOT 9");
-        slotList.add("SLOT 10");
-        slotList.add("SLOT 11");
-        slotList.add("SLOT 12");
-        slotList.add("SLOT 13");
-        slotList.add("SLOT 14");
-        slotList.add("SLOT 15");
-        slotList.add("SLOT 16");
-        slotList.add("SLOT 17");
-        slotList.add("SLOT 18");
-        slotList.add("SLOT 19");
-        slotList.add("SLOT 20");
 
-        mAdapter = new TwoWheelerAdapter(context, slotList);
-
-        gridView = (GridView) findViewById(R.id.gridview);
-        gridView.setAdapter(mAdapter);
-
-    }
 
 
 }
