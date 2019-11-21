@@ -210,7 +210,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     public  void onResume()
     {
         super.onResume();
-        // startActivity(getIntent());
+         startActivity(getIntent());
     }
 
 
