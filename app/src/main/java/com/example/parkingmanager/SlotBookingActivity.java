@@ -88,9 +88,10 @@ public class SlotBookingActivity extends AppCompatActivity {
     }
 
     private void validation() {
-
-
-
+        owner = ownerEt.getText().toString().toLowerCase().trim();
+        vehicleno = vehicleEt.getText().toString().trim().toLowerCase();
+        mobile = mobileEt.getText().toString().trim();
+        email=emailEt.getText().toString().toLowerCase();
         if (owner.isEmpty()) {
             ownerEt.setError("Enter vehicle owner name");
             ownerEt.requestFocus();
