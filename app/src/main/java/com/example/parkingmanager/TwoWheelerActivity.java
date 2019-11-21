@@ -207,11 +207,11 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     }
     //to refresh screen when load
     //@Override
-   // public  void onResume()
-   // {
-        //super.onResume();
+    public  void onResume()
+    {
+        super.onResume();
         // startActivity(getIntent());
-   // }
+    }
 
 
    // String totaltime="";
