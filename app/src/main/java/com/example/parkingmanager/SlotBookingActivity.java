@@ -25,4 +25,7 @@ public class SlotBookingActivity extends AppCompatActivity {
     Button book;
     ImageView back;
     String owner, type, mobile, vehicleno, dateTime, manager,email;
+    int slotno,slotid;
+    SQLiteHelper mSQLiteHelper;
+
 }
