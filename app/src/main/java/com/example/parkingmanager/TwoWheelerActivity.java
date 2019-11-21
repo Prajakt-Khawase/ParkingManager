@@ -125,7 +125,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     }
     //slot already booked activity
     public void bookedSlotAlert(final FourWheelerActivity.SlotModel slotModel){
-       // AlertDialog.Builder builder = new AlertDialog.Builder(TwoWheelerActivity.this);
+       AlertDialog.Builder builder = new AlertDialog.Builder(TwoWheelerActivity.this);
        // builder.setTitle("Slot Already Booked...")
                 //.setMessage("Do you want to release SLOT?");
 
