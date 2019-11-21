@@ -114,7 +114,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 intent.putExtra("slotNo", slotModel.slotno);
                 intent.putExtra("type", "BIKE");
                 intent.putExtra("slotid", slotModel.id);
-               // startActivity(intent);
+                startActivity(intent);
               //  finish();
             }
         } catch (Exception e) {
