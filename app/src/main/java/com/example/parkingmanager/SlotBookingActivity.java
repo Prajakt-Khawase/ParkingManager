@@ -21,15 +21,17 @@ import java.util.Locale;
 public class SlotBookingActivity extends AppCompatActivity {
 
     Context context;
-    EditText ownerEt, mobileEt, vehicleEt, dateTimeEt,emailEt;
+    EditText ownerEt, mobileEt, vehicleEt, dateTimeEt, emailEt;
     Button book;
     ImageView back;
-    String owner, type, mobile, vehicleno, dateTime, manager,email;
-    int slotno,slotid;
+    String owner, type, mobile, vehicleno, dateTime, manager, email;
+    int slotno, slotid;
+
     SQLiteHelper mSQLiteHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-       super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slot_booking);
         context = SlotBookingActivity.this;
         Window window = getWindow();
@@ -41,31 +43,34 @@ public class SlotBookingActivity extends AppCompatActivity {
         mSQLiteHelper = new SQLiteHelper(this);
         initialize();
 
-        //back.setOnClickListener(new View.OnClickListener() {
-           // @Override
-           // public void onClick(View v) {
-               // finish();
-           // }
-       // });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
-       // book.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-           // public void onClick(View v) {
+        book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                //validation();
-            //}
-       // });
+                validation();
+            }
 
-      //  manager= SharedPrefrenceUtilities.getSPstringValue(context,SharedPrefrenceUtilities.spFirstName);
+            private void validation() {
+            }
+        });
 
+       // manager = SharedPrefrenceUtilities.getSPstringValue(context, SharedPrefrenceUtilities.spFirstName);
 
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+        //dateTime = sdf.format(new Date());
+       // dateTimeEt.setText("" + dateTime);
     }
 
     private void initialize() {
-
     }
 
-    private void validation(){
+}
 
-    }
-    }
+
