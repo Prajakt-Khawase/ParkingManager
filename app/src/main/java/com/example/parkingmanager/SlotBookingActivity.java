@@ -22,4 +22,5 @@ public class SlotBookingActivity extends AppCompatActivity {
 
     Context context;
     EditText ownerEt, mobileEt, vehicleEt, dateTimeEt,emailEt;
+    Button book;
 }
