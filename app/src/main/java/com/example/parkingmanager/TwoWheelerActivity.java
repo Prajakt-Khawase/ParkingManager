@@ -214,7 +214,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     }
 
 
-   // String totaltime="";
+     String totaltime="";
   //  @RequiresApi(api = Build.VERSION_CODES.N)
    // public int calculateCharge(String sd, String ed) {
        // int charge =0;
