@@ -69,7 +69,7 @@ public class SlotBookingActivity extends AppCompatActivity {
 
         // get slot from previous class intent
         try {
-           // slotno = getIntent().getIntExtra("slotNo", 0);
+            slotno = getIntent().getIntExtra("slotNo", 0);
             //type = getIntent().getStringExtra("type");
            // slotid=getIntent().getIntExtra("slotid", 0);
            // manager = SharedPrefrenceUtilities.getSPstringValue(context, SharedPrefrenceUtilities.spFirstName);
