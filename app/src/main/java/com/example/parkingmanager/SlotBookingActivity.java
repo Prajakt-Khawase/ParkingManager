@@ -84,10 +84,7 @@ public class SlotBookingActivity extends AppCompatActivity {
         vehicleEt = findViewById(R.id.vehicleno);
         back = findViewById(R.id.booking_back);
         book = findViewById(R.id.book_button);
-
-
-
-
+        emailEt = findViewById(R.id.email);
     }
 
     private void validation() {
