@@ -31,7 +31,7 @@ public class SlotBookingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slot_booking);
-        //context = SlotBookingActivity.this;
+        context = SlotBookingActivity.this;
         //Window window = getWindow();
         //window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
        // window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
