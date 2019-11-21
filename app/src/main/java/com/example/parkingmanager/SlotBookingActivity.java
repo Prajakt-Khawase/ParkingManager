@@ -65,7 +65,7 @@ public class SlotBookingActivity extends AppCompatActivity {
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
         dateTime = sdf.format(new Date());
-       // dateTimeEt.setText("" + dateTime);
+        dateTimeEt.setText("" + dateTime);
     }
 
     private void initialize() {
