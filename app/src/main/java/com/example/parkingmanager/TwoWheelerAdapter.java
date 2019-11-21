@@ -1,6 +1,5 @@
 package com.example.parkingmanager;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,40 +8,52 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class TwoWheelerAdapter extends BaseAdapter {
-    private ArrayList<FourWheelerActivity.SlotModel> slotList;
+public class TwoWheelerAdapter extends BaseAdapter
+{
+    private ArrayList<FourWheelerActivity.SlotModel> slotModels;
+    SlotClickListnerDownload slotClickListnerDownload;
 
     Context context;
 
-    public TwoWheelerAdapter(Context context, ArrayList<FourWheelerActivity.SlotModel> slotList) {
+    public TwoWheelerAdapter(Context context, ArrayList<FourWheelerActivity.SlotModel> slotModels) {
         super();
-        this.slotList = slotList;
-        this.context = context;
+        this.slotModels = slotModels;
+        this.context=context;
+    }
+
+
+    public interface SlotClickListnerDownload{
+        public void  onDownloadClickDeleteListner(FourWheelerActivity.SlotModel slotModel);
+
+
+    }
+
+
+    public void setSlotClickListnerDownload(SlotClickListnerDownload slotClickListnerDownload) {
+
+        this.slotClickListnerDownload=slotClickListnerDownload;
+
     }
 
     @Override
     public int getCount() {
-        return 0;
+        // TODO Auto-generated method stub
+        return slotModels.size();
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public FourWheelerActivity.SlotModel getItem(int position) {
+        // TODO Auto-generated method stub
+        return slotModels.get(position);
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
         return 0;
-    }
-
-    public void setSlotClickListnerDownload(TwoWheelerActivity twoWheelerActivity) {
-    }
-
-    public interface SlotClickListnerDownload {
     }
 
     public static class ViewHolder
@@ -51,10 +62,15 @@ public class TwoWheelerAdapter extends BaseAdapter {
         public TextView slottext;
         public RelativeLayout slotLayout;
     }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         ViewHolder view;
+        final FourWheelerActivity.SlotModel slotModel = getItem(position);
+
+        //Toast.makeText(context, "slot- "+slotModel.id+"  "+slotModel.status+" "+slotModel.slotno+" "+slotModel.type, Toast.LENGTH_SHORT).show();
+
         if(convertView==null)
         {
 
@@ -66,13 +82,29 @@ public class TwoWheelerAdapter extends BaseAdapter {
             view.slotLayout = convertView.findViewById(R.id.slotLayout);
 
             view.slottext.setText("SLOT\n"+(position+1));
+            if(slotModel.status == 1)
+            {
+                view.slottext.setBackgroundResource(R.drawable.green);
+            }else
+            {
+                view.slottext.setBackgroundResource(R.drawable.white);
+
+            }
+//
 
 
             view.slotLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    Toast.makeText(context, "Book 2-Wheeler - "+slotList.get(position), Toast.LENGTH_SHORT).show();
+                    if(slotModels!=null)
+                    {
+                        slotClickListnerDownload.onDownloadClickDeleteListner(slotModel);
+                        //Toast.makeText(context, "slot- "+slotModel.id+"  "+slotModel.status+" "+slotModel.slotno+" "+slotModel.type, Toast.LENGTH_SHORT).show();
+
+
+                    }
+
                 }
             });
 
@@ -81,12 +113,32 @@ public class TwoWheelerAdapter extends BaseAdapter {
         else
         {
             view = (ViewHolder) convertView.getTag();
+            view.slottext.setText("SLOT\n"+(position+1));
+            if(slotModel.status == 1)
+            {
+                view.slottext.setBackgroundResource(R.drawable.green);
+            }else
+            {
+                view.slottext.setBackgroundResource(R.drawable.white);
+
+            }
+            view.slotLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(slotModels!=null)
+                    {
+                        slotClickListnerDownload.onDownloadClickDeleteListner(slotModel);
+                        //Toast.makeText(context, "slot- "+slotModel.id+"  "+slotModel.status+" "+slotModel.slotno+" "+slotModel.type, Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+            });
+
         }
+
         return convertView;
     }
 
 }
-
-
-
-
