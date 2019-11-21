@@ -78,6 +78,7 @@ public class SlotBookingActivity extends AppCompatActivity {
     }
 
     private void initialize() {
+
         dateTimeEt = findViewById(R.id.dateTime);
         ownerEt = findViewById(R.id.ownerName);
         mobileEt = findViewById(R.id.mobileno);
@@ -85,13 +86,17 @@ public class SlotBookingActivity extends AppCompatActivity {
         back = findViewById(R.id.booking_back);
         book = findViewById(R.id.book_button);
         emailEt = findViewById(R.id.email);
+
+
     }
 
     private void validation() {
+
         owner = ownerEt.getText().toString().toLowerCase().trim();
         vehicleno = vehicleEt.getText().toString().trim().toLowerCase();
         mobile = mobileEt.getText().toString().trim();
         email=emailEt.getText().toString().toLowerCase();
+
         if (owner.isEmpty()) {
             ownerEt.setError("Enter vehicle owner name");
             ownerEt.requestFocus();
