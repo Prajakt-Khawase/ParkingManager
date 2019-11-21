@@ -215,8 +215,8 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
 
      String totaltime="";
-  //  @RequiresApi(api = Build.VERSION_CODES.N)
-   // public int calculateCharge(String sd, String ed) {
+     @RequiresApi(api = Build.VERSION_CODES.N)
+     public int calculateCharge(String sd, String ed) {
        // int charge =0;
        // try {
            // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
