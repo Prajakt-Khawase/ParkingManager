@@ -21,11 +21,11 @@ import java.util.Locale;
 public class SlotBookingActivity extends AppCompatActivity {
 
     Context context;
-    EditText ownerEt, mobileEt, vehicleEt, dateTimeEt, emailEt;
+    EditText ownerEt, mobileEt, vehicleEt, dateTimeEt,emailEt;
     Button book;
     ImageView back;
-    String owner, type, mobile, vehicleno, dateTime, manager, email;
-    int slotno, slotid;
+    String owner, type, mobile, vehicleno, dateTime, manager,email;
+    int slotno,slotid;
 
     SQLiteHelper mSQLiteHelper;
 
@@ -56,21 +56,70 @@ public class SlotBookingActivity extends AppCompatActivity {
 
                 validation();
             }
-
-            private void validation() {
-            }
         });
 
-       manager = SharedPrefrenceUtilities.getSPstringValue(context, SharedPrefrenceUtilities.spFirstName);
+        manager= SharedPrefrenceUtilities.getSPstringValue(context,SharedPrefrenceUtilities.spFirstName);
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
         dateTime = sdf.format(new Date());
-        dateTimeEt.setText("" + dateTime);
+        dateTimeEt.setText(""+dateTime);
+
+
+        //Toast.makeText(this, ""+dateTime, Toast.LENGTH_SHORT).show();
+
+        // get slot from previous class intent
+        try {
+           // slotno = getIntent().getIntExtra("slotNo", 0);
+            //type = getIntent().getStringExtra("type");
+           // slotid=getIntent().getIntExtra("slotid", 0);
+           // manager = SharedPrefrenceUtilities.getSPstringValue(context, SharedPrefrenceUtilities.spFirstName);
+        }catch (Exception e){}
+
     }
 
     private void initialize() {
+
+
+
+
     }
 
-}
+    private void validation() {
 
+
+
+        if (owner.isEmpty()) {
+            ownerEt.setError("Enter vehicle owner name");
+            ownerEt.requestFocus();
+        } else if(email.isEmpty())
+        {
+            emailEt.setError("Enter email");
+            emailEt.requestFocus();
+        } else if(!isValidEmail(email))
+        {
+            emailEt.setError("Enter valid email");
+            emailEt.requestFocus();
+        } if (mobile.isEmpty()) {
+            mobileEt.setError("Enter mobile number");
+            mobileEt.requestFocus();
+        } else if (vehicleno.isEmpty()) {
+            vehicleEt.setError("Enter vehicle number");
+            vehicleEt.requestFocus();
+        } else {
+            //Toast.makeText(context, "all set", Toast.LENGTH_SHORT).show();
+
+            mSQLiteHelper.insertBookingRecord(slotno, owner, mobile,email,vehicleno,dateTime,"NA",manager,type,true);
+            mSQLiteHelper.updateBikeSlotDetail(Integer.toString(slotid), Integer.toString(slotno),true,type);
+
+            finish();
+
+        }
+
+    }
+
+    //Email check
+    public static boolean isValidEmail(CharSequence email) {
+        return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+}
 
