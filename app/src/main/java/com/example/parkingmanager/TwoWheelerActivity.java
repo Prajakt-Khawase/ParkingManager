@@ -110,7 +110,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
             if (slotModel.status == 1) {
                // bookedSlotAlert(slotModel);
             } else {
-                //Intent intent = new Intent(context, SlotBookingActivity.class);
+                Intent intent = new Intent(context, SlotBookingActivity.class);
               //  intent.putExtra("slotNo", slotModel.slotno);
                 //intent.putExtra("type", "BIKE");
                 //intent.putExtra("slotid", slotModel.id);
@@ -122,7 +122,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
 
     }}
-    
+
 
     //slot already booked activity
    /* public void bookedSlotAlert(final FourWheelerActivity.SlotModel slotModel) {
