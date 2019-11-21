@@ -39,7 +39,7 @@ public class SlotBookingActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
         }
         mSQLiteHelper = new SQLiteHelper(this);
-       // initialize();
+        initialize();
 
         //back.setOnClickListener(new View.OnClickListener() {
            // @Override
