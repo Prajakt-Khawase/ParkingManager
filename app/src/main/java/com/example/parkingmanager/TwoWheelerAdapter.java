@@ -68,9 +68,6 @@ public class TwoWheelerAdapter extends BaseAdapter
         // TODO Auto-generated method stub
         ViewHolder view;
         final FourWheelerActivity.SlotModel slotModel = getItem(position);
-
-        //Toast.makeText(context, "slot- "+slotModel.id+"  "+slotModel.status+" "+slotModel.slotno+" "+slotModel.type, Toast.LENGTH_SHORT).show();
-
         if(convertView==null)
         {
 
