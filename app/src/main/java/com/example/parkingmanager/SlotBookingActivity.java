@@ -78,6 +78,7 @@ public class SlotBookingActivity extends AppCompatActivity {
     }
 
     private void initialize() {
+        dateTimeEt = findViewById(R.id.dateTime);
 
 
 
