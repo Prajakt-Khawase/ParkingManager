@@ -83,6 +83,7 @@ public class SlotBookingActivity extends AppCompatActivity {
         mobileEt = findViewById(R.id.mobileno);
         vehicleEt = findViewById(R.id.vehicleno);
         back = findViewById(R.id.booking_back);
+        book = findViewById(R.id.book_button);
 
 
 
