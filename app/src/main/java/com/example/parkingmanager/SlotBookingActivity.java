@@ -81,6 +81,7 @@ public class SlotBookingActivity extends AppCompatActivity {
         dateTimeEt = findViewById(R.id.dateTime);
         ownerEt = findViewById(R.id.ownerName);
         mobileEt = findViewById(R.id.mobileno);
+        vehicleEt = findViewById(R.id.vehicleno);
 
 
 
