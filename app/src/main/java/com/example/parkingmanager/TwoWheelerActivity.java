@@ -18,16 +18,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
+import java.util.Date;
 
-public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerAdapter.SlotClickListnerDownload{
+public class TwoWheelerActivity<mAdapter> extends AppCompatActivity implements TwoWheelerAdapter.SlotClickListnerDownload {
 
 
     private TwoWheelerAdapter mAdapter;
     private ArrayList<String> slotList;
     private GridView gridView;
-    Context context= TwoWheelerActivity.this;
+    Context context = TwoWheelerActivity.this;
     SQLiteHelper mSQLiteHelper;
     ArrayList<FourWheelerActivity.SlotModel> slotModels;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +41,8 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
 
         }
-        mSQLiteHelper=new SQLiteHelper(this);
-        slotModels=new ArrayList<>();
+        mSQLiteHelper = new SQLiteHelper(this);
+        slotModels = new ArrayList<>();
         findViewById(R.id.bikeslot_back).setOnClickListener(new View.OnClickListener() {
 
 
@@ -51,7 +53,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         });
         // Cursor cursor = mSQLiteHelper.getAllSlotRecord();
         Cursor cursor = mSQLiteHelper.getSlotDetail("BIKE");
-        int row =  cursor.getCount();
+        int row = cursor.getCount();
         if (cursor != null && cursor.getCount() != 0) {
             cursor.moveToFirst();
             for (int i = 1; i <= row; i++) {
@@ -61,10 +63,10 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 int s2 = cursor.getInt(2);//email
                 String s3 = cursor.getString(3);//mobile
 
-                object.id=s0;
-                object.slotno=s1;
-                object.status=s2;
-                object.type=s3;
+                object.id = s0;
+                object.slotno = s1;
+                object.status = s2;
+                object.type = s3;
                 cursor.moveToNext();
                 slotModels.add(object);
                 // Toast.makeText(TwoWheelerActivity.this, row + " " + s0 + "ID : " + s1 + " " + s2 + " " + s3 + " ", Toast.LENGTH_SHORT).show();
@@ -76,15 +78,38 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         try {
             // prepared arraylist and passed it to the Adapter class
             mAdapter = new TwoWheelerAdapter(context, slotModels);
-           mAdapter.setSlotClickListnerDownload(TwoWheelerActivity.this);
+            mAdapter.setSlotClickListnerDownload(TwoWheelerActivity.this);
             //Set custom adapter to gridview
             gridView = (GridView) findViewById(R.id.gridview);
             gridView.setAdapter(mAdapter);
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
+    }
+
+    public void onDownloadClickDeleteListner(FourWheelerActivity.SlotModel slotModel) {
+        try {
+            //  Toast.makeText(context, "Book 2-Wheeler slot- " + slotModel.slotno, Toast.LENGTH_SHORT).show();
+            if(slotModel.status==1)
+            {
+                bookedSlotAlert(slotModel);
+            }
+            else {
+                Intent intent = new Intent(context, SlotBookingActivity.class);
+                intent.putExtra("slotNo", slotModel.slotno);
+                intent.putExtra("type", "BIKE");
+                intent.putExtra("slotid", slotModel.id);
+                startActivity(intent);
+                finish();
+            }
+        }
+        catch(Exception e){}
+    }
+
+    private void bookedSlotAlert(FourWheelerActivity.SlotModel slotModel) {
     }
 
 
 
-
-
 }
+
+

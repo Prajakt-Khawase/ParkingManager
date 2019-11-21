@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class TwoWheelerAdapter extends BaseAdapter {
-    private ArrayList<String> slotList;
+    private ArrayList<FourWheelerActivity.SlotModel> slotList;
 
     Context context;
 
