@@ -24,4 +24,5 @@ public class SlotBookingActivity extends AppCompatActivity {
     EditText ownerEt, mobileEt, vehicleEt, dateTimeEt,emailEt;
     Button book;
     ImageView back;
+    String owner, type, mobile, vehicleno, dateTime, manager,email;
 }
