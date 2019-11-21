@@ -22,19 +22,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerAdapter.SlotClickListnerDownload {
+public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerAdapter.SlotClickListnerDownload{
 
 
     private TwoWheelerAdapter mAdapter;
     private ArrayList<String> slotList;
 
     private GridView gridView;
-    Context context = TwoWheelerActivity.this;
+    Context context= TwoWheelerActivity.this;
 
     SQLiteHelper mSQLiteHelper;
 
     ArrayList<FourWheelerActivity.SlotModel> slotModels;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +45,10 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
         }
 
-        mSQLiteHelper = new SQLiteHelper(this);
+        mSQLiteHelper=new SQLiteHelper(this);
 
 
-        slotModels = new ArrayList<>();
+        slotModels=new ArrayList<>();
 
         findViewById(R.id.bikeslot_back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +60,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
         // Cursor cursor = mSQLiteHelper.getAllSlotRecord();
         Cursor cursor = mSQLiteHelper.getSlotDetail("BIKE");
-        int row = cursor.getCount();
+        int row =  cursor.getCount();
         if (cursor != null && cursor.getCount() != 0) {
             cursor.moveToFirst();
             for (int i = 1; i <= row; i++) {
@@ -72,10 +71,10 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 String s3 = cursor.getString(3);//mobile
 
 
-                object.id = s0;
-                object.slotno = s1;
-                object.status = s2;
-                object.type = s3;
+                object.id=s0;
+                object.slotno=s1;
+                object.status=s2;
+                object.type=s3;
                 cursor.moveToNext();
 
                 slotModels.add(object);
@@ -96,36 +95,39 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
             // Set custom adapter to gridview
             gridView = (GridView) findViewById(R.id.gridview);
             gridView.setAdapter(mAdapter);
-        } catch (Exception e) {
-        }
+        }catch (Exception e){}
+
 
 
     }
 
-
+    @Override
     public void onDownloadClickDeleteListner(FourWheelerActivity.SlotModel slotModel) {
         try {
 
             //  Toast.makeText(context, "Book 2-Wheeler slot- " + slotModel.slotno, Toast.LENGTH_SHORT).show();
-            if (slotModel.status == 1) {
-               // bookedSlotAlert(slotModel);
-            } else {
+            if(slotModel.status==1)
+            {
+                bookedSlotAlert(slotModel);
+            }
+            else {
                 Intent intent = new Intent(context, SlotBookingActivity.class);
                 intent.putExtra("slotNo", slotModel.slotno);
                 intent.putExtra("type", "BIKE");
                 intent.putExtra("slotid", slotModel.id);
                 startActivity(intent);
-              //  finish();
+                finish();
             }
-        } catch (Exception e) {
         }
+        catch(Exception e){}
 
 
-    }}
+    }
+
 
 
     //slot already booked activity
-   /* public void bookedSlotAlert(final FourWheelerActivity.SlotModel slotModel) {
+    public void bookedSlotAlert(final FourWheelerActivity.SlotModel slotModel){
         AlertDialog.Builder builder = new AlertDialog.Builder(TwoWheelerActivity.this);
         builder.setTitle("Slot Already Booked...")
                 .setMessage("Do you want to release SLOT?");
@@ -138,37 +140,13 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                 String type = slotModel.type;
                 String status = "1";
 
-
-//                Cursor cursor = mSQLiteHelper.getSlotDetail(slotno,type,status);
-//                int row =  cursor.getCount();
-//              //  Toast.makeText(context, ""+row, Toast.LENGTH_SHORT).show();
-//                if (cursor != null && cursor.getCount() != 0) {
-//                    cursor.moveToFirst();
-//                    for (int i = 1; i <= row; i++) {
-//                        FourWheelerActivity.SlotModel object = new FourWheelerActivity.SlotModel();
-//                        String s0 = cursor.getString(0);
-//
-//                        String intime = cursor.getString(6);
-//
-//
-//                        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
-//                        String outtime = sdf.format(new Date());
-//                        int charge=calculateCharge(intime,outtime);
-//
-//                        mSQLiteHelper.releaseSlotDetail(s0,false,outtime,charge);
-//                        mSQLiteHelper.updateBikeSlotDetail(Integer.toString(slotModel.id), Integer.toString(slotModel.slotno),false,slotModel.type);
-//
-//                        finish();// to refresh activity
-//                        startActivity(getIntent());
-//
-//                    }
                 try {
 
 
                     Cursor cursor = mSQLiteHelper.getSlotDetail(slotno, type, status);
                     int row = cursor.getCount();
-                    int columnCount = cursor.getColumnCount();
-                    Toast.makeText(context, "" + cursor.getColumnCount(), Toast.LENGTH_SHORT).show();
+                    int columnCount=cursor.getColumnCount();
+                    Toast.makeText(context, "" +cursor.getColumnCount(), Toast.LENGTH_SHORT).show();
                     if (cursor != null && cursor.getCount() != 0) {
                         cursor.moveToFirst();
                         for (int i = 1; i <= row; i++) {
@@ -176,21 +154,13 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
                             String book_id = cursor.getString(0);
                             String slot = cursor.getString(1);
-
                             String owner = cursor.getString(2);
                             String mobile = cursor.getString(3);
                             String vehicle = cursor.getString(4);
                             String intime = cursor.getString(5);
                             String outtime = cursor.getString(6);
-
                             String manager = cursor.getString(7);
-                            //String type = cursor.getString(8);
-                            // String status = cursor.getString(9);
-//                            String s10 = cursor.getString(10);
-//                            String s11 = cursor.getString(11);
-//
 
-                            //  Toast.makeText(context, s6+" "+s9, Toast.LENGTH_SHORT).show();
 
                             java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
                             outtime = sdf.format(new Date());
@@ -206,7 +176,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                             intent.putExtra("endtime", outtime);
                             intent.putExtra("manager", manager);
                             intent.putExtra("totaltime", totaltime);
-                            intent.putExtra("charge", "$" + charge);
+                            intent.putExtra("charge", "$"+charge);
                             intent.putExtra("slot", slot);
 
                             startActivity(intent);
@@ -217,12 +187,16 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                     }
 
                 } catch (Exception e) {
-                    Toast.makeText(context, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
 
 
+
+
             }
+
+
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -231,61 +205,61 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         });
         builder.show();
     }
-
     //to refresh screen when load
-    @Override
-    public void onResume() {
-        super.onResume();
+    //@Override
+   // public  void onResume()
+   // {
+        //super.onResume();
         // startActivity(getIntent());
-    }
+   // }
 
 
-    String totaltime = "";
+   // String totaltime="";
+  //  @RequiresApi(api = Build.VERSION_CODES.N)
+   // public int calculateCharge(String sd, String ed) {
+       // int charge =0;
+       // try {
+           // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+          //  Date startDate = simpleDateFormat.parse(String.valueOf(sd));
+         //   Date endDate = simpleDateFormat.parse(String.valueOf(ed));
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public int calculateCharge(String sd, String ed) {
-        int charge = 0;
-        try {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-            Date startDate = simpleDateFormat.parse(String.valueOf(sd));
-            Date endDate = simpleDateFormat.parse(String.valueOf(ed));
-
-            long difference = endDate.getTime() - startDate.getTime();
-            if (difference < 0) {
-                Date dateMax = simpleDateFormat.parse("24:00");
-                Date dateMin = simpleDateFormat.parse("00:00");
-                difference = (dateMax.getTime() - startDate.getTime()) + (endDate.getTime() - dateMin.getTime());
-            }
-            int days = (int) (difference / (1000 * 60 * 60 * 24));
-            int hours = (int) ((difference - (1000 * 60 * 60 * 24 * days)) / (1000 * 60 * 60));
-            int min = (int) (difference - (1000 * 60 * 60 * 24 * days) - (1000 * 60 * 60 * hours)) / (1000 * 60);
+          //  long difference = endDate.getTime() - startDate.getTime();
+           // if (difference < 0) {
+              //  Date dateMax = simpleDateFormat.parse("24:00");
+              //  Date dateMin = simpleDateFormat.parse("00:00");
+                //difference = (dateMax.getTime() - startDate.getTime()) + (endDate.getTime() - dateMin.getTime());
+          //  }
+           // int days = (int) (difference / (1000 * 60 * 60 * 24));
+          //  int hours = (int) ((difference - (1000 * 60 * 60 * 24 * days)) / (1000 * 60 * 60));
+          //  int min = (int) (difference - (1000 * 60 * 60 * 24 * days) - (1000 * 60 * 60 * hours)) / (1000 * 60);
             // Log.e("log_tag", "days  :" + days + "  Hours: " + hours + ", Mins: " + min);
 
 
-            totaltime = days + " days " + hours + " hr " + min + " min";
+          //  totaltime = days+" days "+ hours +" hr "+min+" min";
 
 
-            int dayCharge = days * 5;
-            int hourCharge;
-            if (hours <= 8) {
-                hourCharge = 2;
-            } else if (hours > 8 && hours <= 16) {
-                hourCharge = 4;
 
-            } else {
-                hourCharge = 5;
-            }
+          //  int dayCharge= days * 5;
+          //  int hourCharge;
+          //  if(hours<=8)
+          //  {
+                //hourCharge = 2;
+           // }else if(hours>8 && hours<=16)
+            //{
+              //  hourCharge =  4;
 
-            charge = hourCharge + dayCharge;
+            //}else
+            //{
+              //  hourCharge=5;
+            //}
+
+           // charge = hourCharge + dayCharge;
 
 
-        } catch (Exception e) {
-        }
+       // }catch(Exception e){}
 
-        return charge;
+       // return charge;
 
     }
+
 }
-
-
-
