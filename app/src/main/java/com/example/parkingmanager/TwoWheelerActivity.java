@@ -154,14 +154,14 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
                             String book_id = cursor.getString(0);
                             String slot = cursor.getString(1);
+
                             String owner = cursor.getString(2);
                             String mobile = cursor.getString(3);
                             String vehicle = cursor.getString(4);
                             String intime = cursor.getString(5);
                             String outtime = cursor.getString(6);
+
                             String manager = cursor.getString(7);
-
-
                             java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
                             outtime = sdf.format(new Date());
                             int charge = calculateCharge(intime, outtime);
@@ -195,8 +195,6 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
 
             }
-
-
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -206,59 +204,59 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
         builder.show();
     }
     //to refresh screen when load
-    //@Override
+    @Override
     public  void onResume()
     {
         super.onResume();
-         startActivity(getIntent());
+        // startActivity(getIntent());
     }
 
 
-     String totaltime="";
-     @RequiresApi(api = Build.VERSION_CODES.N)
-     public int calculateCharge(String sd, String ed) {
-       // int charge =0;
-       // try {
-           // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-          //  Date startDate = simpleDateFormat.parse(String.valueOf(sd));
-         //   Date endDate = simpleDateFormat.parse(String.valueOf(ed));
+    String totaltime="";
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public int calculateCharge(String sd, String ed) {
+        int charge =0;
+        try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+            Date startDate = simpleDateFormat.parse(String.valueOf(sd));
+            Date endDate = simpleDateFormat.parse(String.valueOf(ed));
 
-          //  long difference = endDate.getTime() - startDate.getTime();
-           // if (difference < 0) {
-              //  Date dateMax = simpleDateFormat.parse("24:00");
-              //  Date dateMin = simpleDateFormat.parse("00:00");
-                //difference = (dateMax.getTime() - startDate.getTime()) + (endDate.getTime() - dateMin.getTime());
-          //  }
-           // int days = (int) (difference / (1000 * 60 * 60 * 24));
-          //  int hours = (int) ((difference - (1000 * 60 * 60 * 24 * days)) / (1000 * 60 * 60));
-          //  int min = (int) (difference - (1000 * 60 * 60 * 24 * days) - (1000 * 60 * 60 * hours)) / (1000 * 60);
+            long difference = endDate.getTime() - startDate.getTime();
+            if (difference < 0) {
+                Date dateMax = simpleDateFormat.parse("24:00");
+                Date dateMin = simpleDateFormat.parse("00:00");
+                difference = (dateMax.getTime() - startDate.getTime()) + (endDate.getTime() - dateMin.getTime());
+            }
+            int days = (int) (difference / (1000 * 60 * 60 * 24));
+            int hours = (int) ((difference - (1000 * 60 * 60 * 24 * days)) / (1000 * 60 * 60));
+            int min = (int) (difference - (1000 * 60 * 60 * 24 * days) - (1000 * 60 * 60 * hours)) / (1000 * 60);
             // Log.e("log_tag", "days  :" + days + "  Hours: " + hours + ", Mins: " + min);
 
 
-          //  totaltime = days+" days "+ hours +" hr "+min+" min";
+            totaltime = days+" days "+ hours +" hr "+min+" min";
 
 
 
-          //  int dayCharge= days * 5;
-          //  int hourCharge;
-          //  if(hours<=8)
-          //  {
-                //hourCharge = 2;
-           // }else if(hours>8 && hours<=16)
-            //{
-              //  hourCharge =  4;
+            int dayCharge= days * 5;
+            int hourCharge;
+            if(hours<=8)
+            {
+                hourCharge = 2;
+            }else if(hours>8 && hours<=16)
+            {
+                hourCharge =  4;
 
-            //}else
-            //{
-              //  hourCharge=5;
-            //}
+            }else
+            {
+                hourCharge=5;
+            }
 
-           // charge = hourCharge + dayCharge;
+            charge = hourCharge + dayCharge;
 
 
-       // }catch(Exception e){}
+        }catch(Exception e){}
 
-       // return charge;
+        return charge;
 
     }
 
