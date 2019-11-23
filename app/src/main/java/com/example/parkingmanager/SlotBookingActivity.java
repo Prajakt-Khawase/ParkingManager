@@ -1,6 +1,7 @@
 package com.example.parkingmanager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,12 +35,7 @@ public class SlotBookingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slot_booking);
         context = SlotBookingActivity.this;
-        Window window = getWindow();
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
-        }
+
         mSQLiteHelper = new SQLiteHelper(this);
         initialize();
 
@@ -117,8 +113,27 @@ public class SlotBookingActivity extends AppCompatActivity {
         } else {
             //Toast.makeText(context, "all set", Toast.LENGTH_SHORT).show();
 
-            mSQLiteHelper.insertBookingRecord(slotno, owner, mobile,email,vehicleno,dateTime,"NA",manager,type,true);
+            mSQLiteHelper.insertBookingRecord(slotno, owner, email,mobile,vehicleno,dateTime,"NA",manager,type,true);
             mSQLiteHelper.updateBikeSlotDetail(Integer.toString(slotid), Integer.toString(slotno),true,type);
+
+
+            String paymentMsg="Hello, "+owner+"" +
+                    "\n\nParking slot "+slotno+ " is booked for your vehicle "+ vehicleno+"."
+                    + "\n\nStart time is "+dateTime+".\nPlease follow parking slot route using following address and park your vehicle on alloted slot.\n\nhttps://prajakt.000webhostapp.com/parking/slot1.jpg"
+                    +"\n\nThank you for choosing our Parking Service.\n\n\n\nRegards,\nPrajakt Parking Service";
+
+            Intent intent=new Intent(Intent.ACTION_SEND);
+            String[] recipients={email};
+            intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+            intent.putExtra(Intent.EXTRA_SUBJECT,"Parking Booking");
+            intent.putExtra(Intent.EXTRA_TEXT,paymentMsg);
+            intent.putExtra(Intent.EXTRA_CC,"khawse.prajaktadm@gmail.com");
+            intent.setType("text/html");
+            intent.setPackage("com.google.android.gm");
+            startActivity(Intent.createChooser(intent, "Send mail"));
+
+
+
 
             finish();
 
@@ -131,4 +146,3 @@ public class SlotBookingActivity extends AppCompatActivity {
         return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }
-
