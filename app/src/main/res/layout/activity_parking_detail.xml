@@ -8,8 +8,6 @@
     tools:context=".ParkingDetailActivity"
     android:background="#fff">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -163,7 +161,115 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_marginRight="@dimen/_5sdp"/>
 
+        <TextView
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bike Parking"
+            android:gravity="center"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="Total Bike Slot"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_weight="1"
+                android:text="25 Slot"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:gravity="center"
+
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="Booked Bike Slot"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/pd_bookedBikeSlot"
+
+                android:layout_weight="1"
+                android:text="00 Slots"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:gravity="center"
+
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="Remaining Bike Slot"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/pd_remaingBikeSlot"
+
+                android:layout_weight="1"
+                android:text="00 Slots"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:gravity="center"
+
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+        <View
+
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"/>
 
     </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
