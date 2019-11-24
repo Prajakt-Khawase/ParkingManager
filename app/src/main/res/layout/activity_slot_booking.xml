@@ -85,6 +85,19 @@
             android:singleLine="true" />
 
 
+        <EditText
+            android:id="@+id/ownerName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/text_field"
+            android:drawablePadding="@dimen/_5sdp"
+            android:hint="Owner name"
+            android:paddingLeft="@dimen/_10sdp"
+
+            android:singleLine="true" />
+
+
     </LinearLayout>
 
 
