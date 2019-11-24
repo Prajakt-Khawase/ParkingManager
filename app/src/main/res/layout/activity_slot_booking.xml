@@ -109,6 +109,19 @@
 
             android:singleLine="true" />
 
+        <EditText
+            android:id="@+id/mobileno"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/text_field"
+            android:drawablePadding="@dimen/_5sdp"
+            android:hint="Mobile number"
+            android:paddingLeft="@dimen/_10sdp"
+            android:inputType="number"
+
+            android:singleLine="true" />
+
 
     </LinearLayout>
 
