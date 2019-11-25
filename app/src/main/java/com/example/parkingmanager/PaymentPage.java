@@ -90,6 +90,10 @@ public class PaymentPage extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_SUBJECT,"Parking Payment");
         intent.putExtra(Intent.EXTRA_TEXT,paymentMsg);
         intent.putExtra(Intent.EXTRA_CC,"khawse.prajaktadm@gmail.com");
+        intent.setType("text/html");
+        intent.setPackage("com.google.android.gm");
+        startActivity(Intent.createChooser(intent, "Send mail"));
+        finish();
             }
     }
 
