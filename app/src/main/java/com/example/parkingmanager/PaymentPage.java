@@ -54,14 +54,30 @@ public class PaymentPage extends AppCompatActivity {
 
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
-                slot=bundle.getString("slot");
-                owner=bundle.getString("owner");
-                vehicleno=bundle.getString("vehicleno");
-                starttime=bundle.getString("starttime");
-                endtime=bundle.getString("endtime");
-                manager=bundle.getString("manager");
-                totaltime=bundle.getString("totaltime");
-                charge=bundle.getString("charge");
+                slot = bundle.getString("slot");
+                owner = bundle.getString("owner");
+                vehicleno = bundle.getString("vehicleno");
+                starttime = bundle.getString("starttime");
+                endtime = bundle.getString("endtime");
+                manager = bundle.getString("manager");
+                totaltime = bundle.getString("totaltime");
+                charge = bundle.getString("charge");
+            }
+                slotText.setText(slot);
+                ownerText.setText(owner);
+                vehiclenoText.setText(vehicleno);
+                starttimeText.setText(starttime);
+                endtimeText.setText(endtime);
+                managerText.setText(manager);
+                totaltimeText.setText(totaltime);
+                chargeText.setText(charge);
+
+
+
+            }catch (Exception e){
+                Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
             }
     }
 
