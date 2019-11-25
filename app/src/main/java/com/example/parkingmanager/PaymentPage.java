@@ -44,7 +44,11 @@ public class PaymentPage extends AppCompatActivity {
         TextView slotText = findViewById(R.id.payment_slot);
         TextView ownerText = findViewById(R.id.payment_owner);
         TextView vehiclenoText = findViewById(R.id.payment_vhicleno);
-
+        TextView starttimeText = findViewById(R.id.payment_start);
+        TextView endtimeText = findViewById(R.id.payment_endTime);
+        TextView managerText = findViewById(R.id.payment_manager);
+        TextView totaltimeText = findViewById(R.id.payment_totaltime);
+        TextView chargeText = findViewById(R.id.payment_totalcharge);
 
     }
 
