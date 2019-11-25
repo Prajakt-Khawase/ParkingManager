@@ -78,6 +78,18 @@ public class PaymentPage extends AppCompatActivity {
                 Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
+    private void sendMail()
+    {
+
+
+        String paymentMsg="Hello, "+owner+"\n\n\n\nYour total time duration for "+vehicleno+" parking is "+totaltime+"  \nThe total Parking charge is "+charge+"\n\nThanks for choosing our Parking Service.\n\n\nThank You!\n\n\nRegards,\nPrajakt Parking Service";
+
+        Intent intent=new Intent(Intent.ACTION_SEND);
+        String[] recipients={"pk@gmail.com"};
+        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Parking Payment");
+        intent.putExtra(Intent.EXTRA_TEXT,paymentMsg);
+        intent.putExtra(Intent.EXTRA_CC,"khawse.prajaktadm@gmail.com");
             }
     }
 
