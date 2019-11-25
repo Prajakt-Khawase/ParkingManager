@@ -49,7 +49,20 @@ public class PaymentPage extends AppCompatActivity {
         TextView managerText = findViewById(R.id.payment_manager);
         TextView totaltimeText = findViewById(R.id.payment_totaltime);
         TextView chargeText = findViewById(R.id.payment_totalcharge);
+        try {
 
+
+            Bundle bundle = getIntent().getExtras();
+            if (bundle != null) {
+                slot=bundle.getString("slot");
+                owner=bundle.getString("owner");
+                vehicleno=bundle.getString("vehicleno");
+                starttime=bundle.getString("starttime");
+                endtime=bundle.getString("endtime");
+                manager=bundle.getString("manager");
+                totaltime=bundle.getString("totaltime");
+                charge=bundle.getString("charge");
+            }
     }
 
 }
