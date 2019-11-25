@@ -30,7 +30,12 @@ public class PaymentPage extends AppCompatActivity {
             }
         });
 
-
+        findViewById(R.id.SendMail).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMail();
+            }
+        });
 
 
     }
