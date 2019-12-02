@@ -245,6 +245,43 @@
                 android:gravity="center"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:layout_weight="3"
+                android:gravity="center"
+                android:textSize="@dimen/_12sdp"
+                android:text="Total Time "
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/payment_totaltime"
+                android:layout_weight="2"
+                android:text="-----"
+                android:textSize="@dimen/_12sdp"
+
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <View
+
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
