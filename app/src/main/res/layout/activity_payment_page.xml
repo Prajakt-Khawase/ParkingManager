@@ -6,55 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".PaymentPage">
 
-    <TextView
-        android:id="@+id/HoursTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hours"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.353" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/PaymentTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Payment"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151" />
 
-    <EditText
-        android:id="@+id/hoursET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:layout_marginBottom="@dimen/_10sdp">
 
-    <Button
-        android:id="@+id/doneBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="doneAction"
-        android:text="DONE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+
+                <ImageView
+                    android:id="@+id/payment_back"
+
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:src="@drawable/ic_back_wh"/>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:orientation="vertical"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+
+
+                    <TextView
+                        android:layout_weight="1"
+
+                        android:textColor="#ffffff"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Payment"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parking Payment"
+            android:gravity="center"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp">
+
+            <TextView
+                android:layout_weight="3"
+                android:gravity="center"
+                android:textSize="@dimen/_16sdp"
+
+                android:text="Slot Number"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/payment_slot"
+                android:layout_weight="2"
+                android:text="-----"
+                android:textSize="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:paddingLeft="@dimen/_20sdp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
