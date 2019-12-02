@@ -110,6 +110,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.button4:
+                Intent intentButton4 = new Intent(context, ParkingDetailActivity.class);
+                startActivity(intentButton4);
                 break;
 
             case R.id.home_logout:

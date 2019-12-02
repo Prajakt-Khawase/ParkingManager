@@ -123,7 +123,17 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_BOOKING, null );
         return res;
+
     }
+
+    //get all booking data
+    public Cursor getAllBookingData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_BOOKING, null );
+        return res;
+    }
+
+
 
     public Cursor managerLogin(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
