@@ -12,28 +12,50 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class FourWheelerAdapter extends BaseAdapter {
-    private ArrayList<String> slotList;
+public class FourWheelerAdapter extends BaseAdapter
+{
+    //private ArrayList<String> slotList;
 
     Context context;
+    SlotClickListnerDownload slotClickListnerDownload;
 
-    public FourWheelerAdapter(Context context, ArrayList<String> slotList) {
+    private ArrayList<FourWheelerActivity.SlotModel> slotModels;
+
+
+    public FourWheelerAdapter(Context context, ArrayList<FourWheelerActivity.SlotModel> slotModels) {
         super();
-        this.slotList = slotList;
+        this.slotModels = slotModels;
         this.context=context;
+    }
+
+
+    public interface SlotClickListnerDownload{
+        public void  onDownloadClickDeleteListner(FourWheelerActivity.SlotModel slotModel);
+
+
+    }
+
+
+    public void setSlotClickListnerDownload(SlotClickListnerDownload slotClickListnerDownload) {
+
+        this.slotClickListnerDownload=slotClickListnerDownload;
+
     }
     @Override
     public int getCount() {
-        return slotList.size();
+        // TODO Auto-generated method stub
+        return slotModels.size();
     }
 
     @Override
-    public Object getItem(int position) {
-        return slotList.get(position);
+    public FourWheelerActivity.SlotModel getItem(int position) {
+        // TODO Auto-generated method stub
+        return slotModels.get(position);
     }
 
     @Override
     public long getItemId(int position) {
+        // TODO Auto-generated method stub
         return 0;
     }
 
@@ -46,7 +68,10 @@ public class FourWheelerAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        // TODO Auto-generated method stub
         ViewHolder view;
+
+        final FourWheelerActivity.SlotModel slotModel = getItem(position);
 
         if(convertView==null)
         {
@@ -59,12 +84,27 @@ public class FourWheelerAdapter extends BaseAdapter {
             view.slotLayout = convertView.findViewById(R.id.slotLayout);
 
             view.slottext.setText("SLOT\n"+(position+1));
+            if(slotModel.status == 1)
+            {
+                view.slottext.setBackgroundResource(R.drawable.green);
+            }else
+            {
+                view.slottext.setBackgroundResource(R.drawable.white);
+
+            }
 
             view.slotLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    Toast.makeText(context, "Book Car - "+slotList.get(position), Toast.LENGTH_SHORT).show();
+                    if(slotModels!=null)
+                    {
+                        slotClickListnerDownload.onDownloadClickDeleteListner(slotModel);
+                        //Toast.makeText(context, "slot- "+slotModel.id+"  "+slotModel.status+" "+slotModel.slotno+" "+slotModel.type, Toast.LENGTH_SHORT).show();
+
+
+                    }
+
                 }
             });
 
@@ -73,8 +113,34 @@ public class FourWheelerAdapter extends BaseAdapter {
         else
         {
             view = (ViewHolder) convertView.getTag();
+            view.slottext.setText("SLOT\n"+(position+1));
+            if(slotModel.status == 1)
+            {
+                view.slottext.setBackgroundResource(R.drawable.green);
+            }else
+            {
+                view.slottext.setBackgroundResource(R.drawable.white);
+
+            }
+            view.slotLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(slotModels!=null)
+                    {
+                        slotClickListnerDownload.onDownloadClickDeleteListner(slotModel);
+                        //	Toast.makeText(context, "slot- "+slotModel.id+"  "+slotModel.status+" "+slotModel.slotno+" "+slotModel.type, Toast.LENGTH_SHORT).show();
+
+
+                    }
+
+                }
+            });
         }
 
+
+//
         return convertView;
     }
+
 }

@@ -94,7 +94,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 COLUMN_NAME + " VARCHAR," + COLUMN_EMAIL + " VARCHAR," + COLUMN_MOBILE + " VARCHAR," +
                 COLUMN_PASSWORD + " VARCHAR);");
         db.execSQL("create table " + TABLE_NAME_SLOT + " ( " + COLUMN_ID +
-                " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_SLOT_NO + " " +
+                " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_SLOT_NO +
                 "VARCHAR," + COLUMN_BOOKING_STATUS + " VARCHAR," + COLUMN_SLOT_TYPE + " VARCHAR);");
         db.execSQL("create table " + TABLE_NAME_BOOKING + " ( " +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_SLOT_NO +
