@@ -104,10 +104,15 @@ public class SlotBookingActivity extends AppCompatActivity {
         {
             emailEt.setError("Enter valid email");
             emailEt.requestFocus();
-        } if (mobile.isEmpty()) {
+        } else if (mobile.isEmpty()) {
             mobileEt.setError("Enter mobile number");
             mobileEt.requestFocus();
-        } else if (vehicleno.isEmpty()) {
+        }
+        else if (mobile.length()!= 10) {
+            mobileEt.setError("Enter 10 digit valid mobile number");
+            mobileEt.requestFocus();
+        }
+        else if (vehicleno.isEmpty()) {
             vehicleEt.setError("Enter vehicle number");
             vehicleEt.requestFocus();
         } else {
