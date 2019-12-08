@@ -122,6 +122,11 @@ public class SlotBookingActivity extends AppCompatActivity {
             {
                 address= "https://prajakt.000webhostapp.com/parking/car/CarSlot"+slotno+".jpg";
             }
+            else if(type.equals("BIKE"))
+            {
+                address= "https://prajakt.000webhostapp.com/parking/bike/twowheeler"+slotno+".png";
+
+            }
             String paymentMsg="Hello, "+owner+"" +
                     "\n\nParking slot "+slotno+ " is booked for your vehicle "+ vehicleno+"."
                     + "\n\nStart time is "+dateTime+".\nPlease follow parking slot route using following address and park your vehicle on alloted slot.\n\nhttps://prajakt.000webhostapp.com/parking/slot1.jpg"
