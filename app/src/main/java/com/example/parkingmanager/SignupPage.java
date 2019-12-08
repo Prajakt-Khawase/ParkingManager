@@ -85,6 +85,10 @@ public class SignupPage extends AppCompatActivity {
             mobileED.setError("Enter mobile number");
 
         }
+        else if (mobile.length()!= 10) {
+            mobileED.setError("Enter 10 digit valid mobile number");
+            mobileED.requestFocus();
+        }
         else if(password.isEmpty())
         {
             passwordED.setError("Enter password");
