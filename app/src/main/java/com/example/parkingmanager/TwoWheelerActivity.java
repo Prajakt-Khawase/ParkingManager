@@ -38,12 +38,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_wheeler_parking);
-        Window window = getWindow();
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark)); //status bar or the time bar at the top
-        }
+
 
         mSQLiteHelper=new SQLiteHelper(this);
 
@@ -79,7 +74,6 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
 
                 slotModels.add(object);
 
-                // Toast.makeText(TwoWheelerActivity.this, row + " " + s0 + "ID : " + s1 + " " + s2 + " " + s3 + " ", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -146,7 +140,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                     Cursor cursor = mSQLiteHelper.getSlotDetail(slotno, type, status);
                     int row = cursor.getCount();
                     int columnCount=cursor.getColumnCount();
-                    Toast.makeText(context, "" +cursor.getColumnCount(), Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(context, "" +cursor.getColumnCount(), Toast.LENGTH_SHORT).show();
                     if (cursor != null && cursor.getCount() != 0) {
                         cursor.moveToFirst();
                         for (int i = 1; i <= row; i++) {
@@ -156,13 +150,15 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                             String slot = cursor.getString(1);
 
                             String owner = cursor.getString(2);
-                            String mobile = cursor.getString(3);
+                            String email = cursor.getString(3);
                             String vehicle = cursor.getString(4);
                             String intime = cursor.getString(5);
                             String outtime = cursor.getString(6);
 
                             String manager = cursor.getString(7);
-                            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+
+
+                            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("MM-dd-yyyy HH:mm:ss", Locale.getDefault());
                             outtime = sdf.format(new Date());
                             int charge = calculateCharge(intime, outtime);
 
@@ -178,11 +174,9 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                             intent.putExtra("totaltime", totaltime);
                             intent.putExtra("charge", "$"+charge);
                             intent.putExtra("slot", slot);
-
+                            intent.putExtra("email", email);
                             startActivity(intent);
                             finish();
-
-
                         }
                     }
 
@@ -190,8 +184,6 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
                     Toast.makeText(context, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
-
-
 
 
             }
@@ -217,14 +209,16 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     public int calculateCharge(String sd, String ed) {
         int charge =0;
         try {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-            Date startDate = simpleDateFormat.parse(String.valueOf(sd));
-            Date endDate = simpleDateFormat.parse(String.valueOf(ed));
+            // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("MM-dd-yyyy HH:mm:ss", Locale.getDefault());
+
+            Date startDate = sdf.parse(String.valueOf(sd));
+            Date endDate = sdf.parse(String.valueOf(ed));
 
             long difference = endDate.getTime() - startDate.getTime();
             if (difference < 0) {
-                Date dateMax = simpleDateFormat.parse("24:00");
-                Date dateMin = simpleDateFormat.parse("00:00");
+                Date dateMax = sdf.parse("24:00");
+                Date dateMin = sdf.parse("00:00");
                 difference = (dateMax.getTime() - startDate.getTime()) + (endDate.getTime() - dateMin.getTime());
             }
             int days = (int) (difference / (1000 * 60 * 60 * 24));
