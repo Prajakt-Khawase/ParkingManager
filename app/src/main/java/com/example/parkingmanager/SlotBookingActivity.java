@@ -127,16 +127,17 @@ public class SlotBookingActivity extends AppCompatActivity {
                 address= "https://prajakt.000webhostapp.com/parking/bike/twowheeler"+slotno+".png";
 
             }
-            String paymentMsg="Hello, "+owner+"" +
+            String bookingMsg="Hello, "+owner+"" +
                     "\n\nParking slot "+slotno+ " is booked for your vehicle "+ vehicleno+"."
-                    + "\n\nStart time is "+dateTime+".\nPlease follow parking slot route using following address and park your vehicle on alloted slot.\n\nhttps://prajakt.000webhostapp.com/parking/slot1.jpg"
-                    +"\n\nThank you for choosing our Parking Service.\n\n\n\nRegards,\nPrajakt Parking Service";
+                    + "\n\nStart time is "+dateTime+".\nPlease follow parking slot route using following " +
+                    "address and park your vehicle on alloted slot.\n\n"+address
+                    +"\n\nThank you for choosing our Parking Service.\n\n\n\nRegards,\nMid_Team5 Parking Service";
 
             Intent intent=new Intent(Intent.ACTION_SEND);
             String[] recipients={email};
             intent.putExtra(Intent.EXTRA_EMAIL, recipients);
             intent.putExtra(Intent.EXTRA_SUBJECT,"Parking Booking");
-            intent.putExtra(Intent.EXTRA_TEXT,paymentMsg);
+            intent.putExtra(Intent.EXTRA_TEXT,bookingMsg);
             intent.putExtra(Intent.EXTRA_CC,"khawse.prajaktadm@gmail.com");
             intent.setType("text/html");
             intent.setPackage("com.google.android.gm");
