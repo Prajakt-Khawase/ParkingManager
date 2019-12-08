@@ -19,9 +19,6 @@ public class PaymentPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_page);
-
-
-
         initialize();
         findViewById(R.id.payment_back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,8 +33,6 @@ public class PaymentPage extends AppCompatActivity {
                 sendMail();
             }
         });
-
-
     }
 
     private void initialize() {
@@ -51,7 +46,6 @@ public class PaymentPage extends AppCompatActivity {
         TextView chargeText = findViewById(R.id.payment_totalcharge);
         try {
 
-
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
                 slot = bundle.getString("slot");
@@ -62,6 +56,8 @@ public class PaymentPage extends AppCompatActivity {
                 manager = bundle.getString("manager");
                 totaltime = bundle.getString("totaltime");
                 charge = bundle.getString("charge");
+                email=bundle.getString("email");
+
             }
                 slotText.setText(slot);
                 ownerText.setText(owner);
@@ -72,15 +68,12 @@ public class PaymentPage extends AppCompatActivity {
                 totaltimeText.setText(totaltime);
                 chargeText.setText(charge);
 
-
-
             }catch (Exception e){
                 Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     private void sendMail()
     {
-
 
         String paymentMsg="Hello, "+owner+"\n\n\n\nYour total time duration for "+vehicleno+" parking is "+totaltime+"  \nThe total Parking charge is "+charge+"\n\nThanks for choosing our Parking Service.\n\n\nThank You!\n\n\nRegards,\nPrajakt Parking Service";
 
