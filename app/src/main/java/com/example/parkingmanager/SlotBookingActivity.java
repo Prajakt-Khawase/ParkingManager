@@ -117,6 +117,11 @@ public class SlotBookingActivity extends AppCompatActivity {
             mSQLiteHelper.updateBikeSlotDetail(Integer.toString(slotid), Integer.toString(slotno),true,type);
 
 
+            String address="";
+            if(type.equals("CAR"))
+            {
+                address= "https://prajakt.000webhostapp.com/parking/car/CarSlot"+slotno+".jpg";
+            }
             String paymentMsg="Hello, "+owner+"" +
                     "\n\nParking slot "+slotno+ " is booked for your vehicle "+ vehicleno+"."
                     + "\n\nStart time is "+dateTime+".\nPlease follow parking slot route using following address and park your vehicle on alloted slot.\n\nhttps://prajakt.000webhostapp.com/parking/slot1.jpg"
@@ -132,11 +137,7 @@ public class SlotBookingActivity extends AppCompatActivity {
             intent.setPackage("com.google.android.gm");
             startActivity(Intent.createChooser(intent, "Send mail"));
 
-
-
-
             finish();
-
         }
 
     }
