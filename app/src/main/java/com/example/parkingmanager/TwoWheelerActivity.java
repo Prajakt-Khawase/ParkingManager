@@ -5,18 +5,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,7 +33,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_two_wheeler_parking);
+        setContentView(R.layout.activity_two_wheeler);
 
 
         mSQLiteHelper=new SQLiteHelper(this);
