@@ -209,7 +209,7 @@ public class TwoWheelerActivity extends AppCompatActivity implements TwoWheelerA
     public int calculateCharge(String sd, String ed) {
         int charge =0;
         try {
-            // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+
             java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("MM-dd-yyyy HH:mm:ss", Locale.getDefault());
 
             Date startDate = sdf.parse(String.valueOf(sd));
