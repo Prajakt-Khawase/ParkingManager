@@ -13,6 +13,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.GridView;
 import android.widget.Toast;
+import android.icu.util.Calendar;
+
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,7 +47,8 @@ public class FourWheelerActivity extends AppCompatActivity implements FourWheele
         mSQLiteHelper=new SQLiteHelper(this);
 
         slotModels=new ArrayList<>();
-        Cursor cursor = mSQLiteHelper.getSlotDetail("CAR");
+        Cursor cursor = mSQLiteHelper.getSlotDetail("CAR");     // to get the slot detail
+
         int row =  cursor.getCount();
         if (cursor != null && cursor.getCount() != 0) {
             cursor.moveToFirst();
@@ -164,7 +167,7 @@ public class FourWheelerActivity extends AppCompatActivity implements FourWheele
 
                             //  Toast.makeText(context, s6+" "+s9, Toast.LENGTH_SHORT).show();
 
-                            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+                            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("MM-dd-yyyy HH:mm:ss", Locale.getDefault());
                             outtime = sdf.format(new Date());
                             int charge = calculateCharge(intime, outtime);
 
@@ -219,14 +222,17 @@ public class FourWheelerActivity extends AppCompatActivity implements FourWheele
     public int calculateCharge(String sd, String ed) {
         int charge =0;
         try {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-            Date startDate = simpleDateFormat.parse(String.valueOf(sd));
-            Date endDate = simpleDateFormat.parse(String.valueOf(ed));
+            //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("MM-dd-yyyy HH:mm:ss", Locale.getDefault());
+
+            Date startDate = sdf.parse(String.valueOf(sd));
+            Date endDate = sdf.parse(String.valueOf(ed));
+
 
             long difference = endDate.getTime() - startDate.getTime();
             if (difference < 0) {
-                Date dateMax = simpleDateFormat.parse("24:00");
-                Date dateMin = simpleDateFormat.parse("00:00");
+                Date dateMax = sdf.parse("24:00");
+                Date dateMin = sdf.parse("00:00");
                 difference = (dateMax.getTime() - startDate.getTime()) + (endDate.getTime() - dateMin.getTime());
             }
             int days = (int) (difference / (1000 * 60 * 60 * 24));

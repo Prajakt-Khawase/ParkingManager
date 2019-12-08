@@ -11,8 +11,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "SQLiteDatabase.db";
 
-
-    // Creating Attributes for Manager Table.
+    //Manager Table
     public static final String TABLE_NAME_MANAGER = "MANAGER";
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_EMAIL = "EMAIL";
@@ -20,11 +19,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_PASSWORD = "PASWWORD";
     public static final String COLUMN_NAME = "NAME";
 
-    //Slot Booking Table
+
+    //Slot table
     public static final String TABLE_NAME_SLOT = "SLOTS";
     public static final String COLUMN_SLOT_NO = "NO";
     public static final String COLUMN_BOOKING_STATUS = "STATUS";
     public static final String COLUMN_SLOT_TYPE = "TYPE";
+
 
     //Booking table
     public static final String TABLE_NAME_BOOKING = "BOOKINGS";
@@ -41,13 +42,15 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_PARKING_CHARGE = "CHARGE";
 
 
-    private SQLiteDatabase database;
 
+
+    private SQLiteDatabase database;
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         // TODO Auto-generated constructor stub
     }
 
+    //for Manager sign up /Log in table record
     public void insertRecord(String name, String email, String mobile, String password) {
         database = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -59,6 +62,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         database.close();
     }
 
+
     //For slot table slot insert record
     public void insertSlotRecord(int no, boolean status, String type) {
         database = this.getReadableDatabase();
@@ -69,13 +73,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         database.insert(TABLE_NAME_SLOT, null, contentValues);
         database.close();
     }
+
+//
+
+
     //    //for booking record
     public void insertBookingRecord(int slotno, String owner, String mobile, String email, String vehicle, String intime, String outtime, String manager, String type, boolean  status) {
         database = this.getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(TABLE_SLOT_NO, slotno);
         contentValues.put(TABLE_OWNER_NAME, owner);
-        contentValues.put(TABLE_MOBILE_NO, mobile);
         contentValues.put(TABLE_MOBILE_NO, mobile);
         contentValues.put(TABLE_EMAIL, email);
         contentValues.put(TABLE_VEHICLE_NO, vehicle);
@@ -85,28 +92,23 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(TABLE_VEHICLE_TYPE, type);
         contentValues.put(TABLE_BOOKING_STATUS, status);
         contentValues.put(TABLE_PARKING_CHARGE, "NA");
+
         database.insert(TABLE_NAME_BOOKING, null, contentValues);
         database.close();
     }
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME_MANAGER + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COLUMN_NAME + " VARCHAR," + COLUMN_EMAIL + " VARCHAR," + COLUMN_MOBILE + " VARCHAR," +
-                COLUMN_PASSWORD + " VARCHAR);");
-        db.execSQL("create table " + TABLE_NAME_SLOT + " ( " + COLUMN_ID +
-                " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_SLOT_NO +
-                "VARCHAR," + COLUMN_BOOKING_STATUS + " VARCHAR," + COLUMN_SLOT_TYPE + " VARCHAR);");
-        db.execSQL("create table " + TABLE_NAME_BOOKING + " ( " +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_SLOT_NO +
-                " VARCHAR," + TABLE_OWNER_NAME + " VARCHAR," + TABLE_MOBILE_NO + " VARCHAR,"
-                + TABLE_EMAIL + " VARCHAR," + TABLE_VEHICLE_NO + " VARCHAR," + TABLE_IN_DATE_TIME
-                + " VARCHAR," + TABLE_OUT_DATE_TIME + " VARCHAR," + TABLE_MANAGER_NAME + " VARCHAR,"
-                + TABLE_VEHICLE_TYPE + " VARCHAR," + TABLE_BOOKING_STATUS + " VARCHAR,"
-                + TABLE_PARKING_CHARGE + " VARCHAR);");
-    }
 
+
+    @Override //ignore error,it's not error
+
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table " + TABLE_NAME_MANAGER + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME + " VARCHAR," + COLUMN_EMAIL + " VARCHAR," + COLUMN_MOBILE + " VARCHAR," + COLUMN_PASSWORD + " VARCHAR);");
+        db.execSQL("create table " + TABLE_NAME_SLOT + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_SLOT_NO + " VARCHAR," + COLUMN_BOOKING_STATUS + " VARCHAR," + COLUMN_SLOT_TYPE + " VARCHAR);");
+        db.execSQL("create table " + TABLE_NAME_BOOKING + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_SLOT_NO + " VARCHAR," + TABLE_OWNER_NAME + " VARCHAR," + TABLE_MOBILE_NO + " VARCHAR," + TABLE_EMAIL + " VARCHAR," + TABLE_VEHICLE_NO + " VARCHAR," + TABLE_IN_DATE_TIME + " VARCHAR," + TABLE_OUT_DATE_TIME + " VARCHAR," + TABLE_MANAGER_NAME + " VARCHAR," + TABLE_VEHICLE_TYPE + " VARCHAR," + TABLE_BOOKING_STATUS + " VARCHAR," + TABLE_PARKING_CHARGE + " VARCHAR);");
+
+    }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // TODO Auto-generated method stub
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_MANAGER);
         onCreate(db);
     }
@@ -118,12 +120,12 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return res;
     }
 
+
     //get slot record
     public Cursor getAllSlotRecord() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_BOOKING, null );
+        Cursor res =  db.rawQuery( "select * from "+TABLE_NAME_SLOT, null );
         return res;
-
     }
 
     //get all booking data
@@ -135,33 +137,35 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
 
 
-    public Cursor managerLogin(String username, String password) {
-        SQLiteDatabase db = this.getReadableDatabase();
 
+
+    public Cursor managerLogin(String username, String password)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
         String[] coulmnNames = new String[] {COLUMN_ID,COLUMN_NAME,COLUMN_EMAIL,COLUMN_MOBILE,COLUMN_PASSWORD};
         String whereClause = COLUMN_EMAIL + " = ? AND " + COLUMN_PASSWORD  + " = ?";
-        String[] params = new String[] {
-                username,
-                password
-        };
+        String[] params = new String[] {username, password};
         Cursor c = db.query(TABLE_NAME_MANAGER, coulmnNames, whereClause, params, null, null, null);
-
         return c;
     }
 
-    public Cursor k(String type) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "SELECT * FROM BOOKINGS WHERE TRIM(TYPE) = '"+type.trim()+"'", null );
-        return res;
-    }
 
+//    public Cursor k(String type) {
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        Cursor res =  db.rawQuery( "SELECT * FROM BOOKINGS WHERE TRIM(TYPE) = '"+type.trim()+"'", null );
+//        return res;
+//    }
+
+
+    // to get the slot detail
     public Cursor getSlotDetail(String type) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "SELECT * FROM SLOTS WHERE TRIM(TYPE) = '"+type.trim()+"'", null );
         return res;
     }
 
-    //update slot detail
+
+    //update slot booking status
     public void updateBikeSlotDetail(String id, String no, boolean status, String type)
     {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -172,6 +176,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_SLOT_TYPE, type);
         db.update(TABLE_NAME_SLOT, contentValues, "ID = ?", new String[]{id});
     }
+
 
     //to release slot
     public void releaseSlotDetail(String id, boolean status, String outDatetime, int charge)
@@ -184,6 +189,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         db.update(TABLE_NAME_BOOKING, contentValues, "ID = ?", new String[]{id});
 
     }
+
+
+
     ///get booked data
     public Cursor getSlotDetail(String slotno, String type, String status)
     {
@@ -193,6 +201,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         String[] params = new String[] {slotno, type, status};
         Cursor c = db.query(TABLE_NAME_BOOKING, coulmnNames, whereClause, params, null, null, null);
         return c;
-
     }
+
+
+
 }

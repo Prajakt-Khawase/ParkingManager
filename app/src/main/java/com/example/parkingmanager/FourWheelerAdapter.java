@@ -61,7 +61,7 @@ public class FourWheelerAdapter extends BaseAdapter
 
     public static class ViewHolder
     {
-        public ImageView imgViewFlag;
+        //public ImageView imgViewFlag;
         public TextView slottext;
         public RelativeLayout slotLayout;
     }
