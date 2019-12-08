@@ -104,15 +104,10 @@ public class SlotBookingActivity extends AppCompatActivity {
         {
             emailEt.setError("Enter valid email");
             emailEt.requestFocus();
-        } else if (mobile.isEmpty()) {
+        } if (mobile.isEmpty()) {
             mobileEt.setError("Enter mobile number");
             mobileEt.requestFocus();
-        }
-        else if (mobile.length()!= 10) {
-            mobileEt.setError("Enter 10 digit valid mobile number");
-            mobileEt.requestFocus();
-        }
-        else if (vehicleno.isEmpty()) {
+        } else if (vehicleno.isEmpty()) {
             vehicleEt.setError("Enter vehicle number");
             vehicleEt.requestFocus();
         } else {
@@ -132,11 +127,11 @@ public class SlotBookingActivity extends AppCompatActivity {
                 address= "https://prajakt.000webhostapp.com/parking/bike/twowheeler"+slotno+".png";
 
             }
+
             String bookingMsg="Hello, "+owner+"" +
                     "\n\nParking slot "+slotno+ " is booked for your vehicle "+ vehicleno+"."
-                    + "\n\nStart time is "+dateTime+".\nPlease follow parking slot route using following " +
-                    "address and park your vehicle on alloted slot.\n\n"+address
-                    +"\n\nThank you for choosing our Parking Service.\n\n\n\nRegards,\nMid_Team5 Parking Service";
+                    + "\n\nStart time is "+dateTime+".\nPlease follow parking slot route using following address and park your vehicle on alloted slot.\n\n"+address
+                    +"\n\nThank you for choosing our Parking Service.\n\n\n\nRegards,\nTeam Parking Manager";
 
             Intent intent=new Intent(Intent.ACTION_SEND);
             String[] recipients={email};
@@ -148,7 +143,11 @@ public class SlotBookingActivity extends AppCompatActivity {
             intent.setPackage("com.google.android.gm");
             startActivity(Intent.createChooser(intent, "Send mail"));
 
+
+
+
             finish();
+
         }
 
     }

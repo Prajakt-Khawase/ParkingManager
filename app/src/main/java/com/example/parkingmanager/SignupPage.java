@@ -43,7 +43,7 @@ public class SignupPage extends AppCompatActivity {
         });
 
     }
-    
+
     private void initialize() {
 
 
@@ -53,7 +53,7 @@ public class SignupPage extends AppCompatActivity {
         mobileED=findViewById(R.id.mobileSignup);
         passwordED=findViewById(R.id.passwordSignup);
         cnfrmPasswordED=findViewById(R.id.confirm_passwordSignup);
-        
+
     }
     private void validations()
     {
@@ -68,15 +68,15 @@ public class SignupPage extends AppCompatActivity {
         {
             fnameED.setError("Enter first name");
 
-        } else if(lname.isEmpty())
+        }else if(lname.isEmpty())
         {
             lnameED.setError("Enter last name");
 
-        } else if(email.isEmpty())
+        }else if(email.isEmpty())
         {
             emailED.setError("Enter email");
 
-        } else if(!isValidEmail(email))
+        }else if(!isValidEmail(email))
         {
             emailED.setError("Enter valid email");
 
@@ -84,12 +84,7 @@ public class SignupPage extends AppCompatActivity {
         {
             mobileED.setError("Enter mobile number");
 
-        }
-        else if (mobile.length()!= 10) {
-            mobileED.setError("Enter 10 digit valid mobile number");
-            mobileED.requestFocus();
-        }
-        else if(password.isEmpty())
+        }else if(password.isEmpty())
         {
             passwordED.setError("Enter password");
 
@@ -100,8 +95,7 @@ public class SignupPage extends AppCompatActivity {
         }else if(!password.equals(cnfrmPassword)) {
             passwordED.setError("Password mismatch");
 
-        }
-        else {
+        }else {
             String name = fname + " " + lname;
 
             mSqLiteHelper.insertRecord(name, email, mobile, password);
@@ -109,8 +103,7 @@ public class SignupPage extends AppCompatActivity {
             startActivity(new Intent(SignupPage.this, MainActivity.class));
             finish();
 
-        }
-    }
+        }}
 
 //    public void appCloseAlert() {
 //        AlertDialog.Builder builder = new AlertDialog.Builder(SignupPage.this);
@@ -158,8 +151,8 @@ public class SignupPage extends AppCompatActivity {
     }
 }
 
-            
 
-    
-    
+
+
+
 

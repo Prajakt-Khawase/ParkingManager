@@ -19,6 +19,9 @@ public class PaymentPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_page);
+
+
+
         initialize();
         findViewById(R.id.payment_back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,13 +29,15 @@ public class PaymentPage extends AppCompatActivity {
                 finish();
             }
         });
-
         findViewById(R.id.SendMail).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendMail();
             }
         });
+
+
+
     }
 
     private void initialize() {
@@ -44,39 +49,46 @@ public class PaymentPage extends AppCompatActivity {
         TextView managerText = findViewById(R.id.payment_manager);
         TextView totaltimeText = findViewById(R.id.payment_totaltime);
         TextView chargeText = findViewById(R.id.payment_totalcharge);
+
         try {
+
 
             Bundle bundle = getIntent().getExtras();
             if (bundle != null) {
-                slot = bundle.getString("slot");
-                owner = bundle.getString("owner");
-                vehicleno = bundle.getString("vehicleno");
-                starttime = bundle.getString("starttime");
-                endtime = bundle.getString("endtime");
-                manager = bundle.getString("manager");
-                totaltime = bundle.getString("totaltime");
-                charge = bundle.getString("charge");
+                slot=bundle.getString("slot");
+                owner=bundle.getString("owner");
+                vehicleno=bundle.getString("vehicleno");
+                starttime=bundle.getString("starttime");
+                endtime=bundle.getString("endtime");
+                manager=bundle.getString("manager");
+                totaltime=bundle.getString("totaltime");
+                charge=bundle.getString("charge");
                 email=bundle.getString("email");
-            }
-                slotText.setText(slot);
-                ownerText.setText(owner);
-                vehiclenoText.setText(vehicleno);
-                starttimeText.setText(starttime);
-                endtimeText.setText(endtime);
-                managerText.setText(manager);
-                totaltimeText.setText(totaltime);
-                chargeText.setText(charge);
 
-            }catch (Exception e){
-                Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
+
+            slotText.setText(slot);
+            ownerText.setText(owner);
+            vehiclenoText.setText(vehicleno);
+            starttimeText.setText(starttime);
+            endtimeText.setText(endtime);
+            managerText.setText(manager);
+            totaltimeText.setText(totaltime);
+            chargeText.setText(charge);
+
+
+
+        }catch (Exception e){
+            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+
     private void sendMail()
     {
 
-        String paymentMsg="Hello, "+owner+"\n\n\n\nYour total time duration for "
-                +vehicleno+" parking is "+totaltime+"  \nThe total Parking charge is "
-                +charge+"\n\nThanks for choosing our Parking Service.\n\n\nThank You!\n\n\nRegards,\nMid_Team5 Parking Service";
+
+        String paymentMsg="Hello, "+owner+"\n\n\n\nYour total time duration for "+vehicleno+" parking is "+totaltime+"  \nThe total Parking charge is "+charge+"\n\nThanks for choosing our Parking Service.\n\n\nThank You!\n\n\nRegards,\nPrajakt Parking Service";
 
         Intent intent=new Intent(Intent.ACTION_SEND);
         String[] recipients={email};
@@ -88,7 +100,6 @@ public class PaymentPage extends AppCompatActivity {
         intent.setPackage("com.google.android.gm");
         startActivity(Intent.createChooser(intent, "Send mail"));
         finish();
-            }
+
     }
-
-
+}
