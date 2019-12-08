@@ -57,7 +57,6 @@ public class PaymentPage extends AppCompatActivity {
                 totaltime = bundle.getString("totaltime");
                 charge = bundle.getString("charge");
                 email=bundle.getString("email");
-
             }
                 slotText.setText(slot);
                 ownerText.setText(owner);
