@@ -14,45 +14,51 @@
         android:orientation="vertical"
         android:layout_marginTop="@dimen/_40sdp"
         >
+
+
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/_100sdp"
             android:src="@drawable/logo1" />
+
+
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/_35sdp"
             android:background="@drawable/text_field"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/_15sdp"
             android:hint="Username(email)"
             android:inputType="textEmailAddress"
             android:singleLine="true"
-            android:drawablePadding="5dp"
+            android:drawablePadding="@dimen/_5sdp"
 
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="@dimen/_10sdp"/>
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/_35sdp"
             android:background="@drawable/text_field"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/_15sdp"
 
             android:hint="Password"
-            android:drawablePadding="10dp"
+            android:drawablePadding="@dimen/_10sdp"
             android:singleLine="true"
             android:inputType="textPassword"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="@dimen/_10sdp"/>
+
         <Button
             android:id="@+id/login_button"
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
             android:text="Sign in"
             android:textColor="#ffffff"
-            android:textSize="14dp"
+            android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
+
             android:background="@drawable/button"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,16 +71,19 @@
                 android:text="New User? "
 
                 />
-
             <TextView
                 android:id="@+id/loginSignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:clickable="false"
                 android:text="Sign Up"
                 android:textColor="@color/colorPrimary"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
-    </LinearLayout>
+
 </LinearLayout>

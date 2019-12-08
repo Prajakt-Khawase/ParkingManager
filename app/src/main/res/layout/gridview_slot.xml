@@ -7,11 +7,12 @@
     android:padding="5dp">
 
     <TextView
-        android:background="@drawable/border"
+        android:background="@drawable/white"
 
         android:id="@+id/slot"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:text="SLOT"
+        android:textStyle="bold"
         android:gravity="center"/>
 </RelativeLayout>
