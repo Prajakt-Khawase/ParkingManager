@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PaymentPage"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".RateCardActivity"
             android:screenOrientation="portrait"
@@ -26,8 +26,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SplashActivity" />
 
-        <activity android:name=".CustomerLogout" />
-        <activity android:name=".BookSlot" />
         <activity
             android:name=".SignupPage"
             android:screenOrientation="portrait"
@@ -48,8 +46,8 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".VehicleInformation" >
+            android:theme="@style/AppTheme.NoActionBar" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
