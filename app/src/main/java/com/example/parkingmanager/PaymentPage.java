@@ -75,10 +75,12 @@ public class PaymentPage extends AppCompatActivity {
     private void sendMail()
     {
 
-        String paymentMsg="Hello, "+owner+"\n\n\n\nYour total time duration for "+vehicleno+" parking is "+totaltime+"  \nThe total Parking charge is "+charge+"\n\nThanks for choosing our Parking Service.\n\n\nThank You!\n\n\nRegards,\nPrajakt Parking Service";
+        String paymentMsg="Hello, "+owner+"\n\n\n\nYour total time duration for "
+                +vehicleno+" parking is "+totaltime+"  \nThe total Parking charge is "
+                +charge+"\n\nThanks for choosing our Parking Service.\n\n\nThank You!\n\n\nRegards,\nMid_Team5 Parking Service";
 
         Intent intent=new Intent(Intent.ACTION_SEND);
-        String[] recipients={"pk@gmail.com"};
+        String[] recipients={email};
         intent.putExtra(Intent.EXTRA_EMAIL, recipients);
         intent.putExtra(Intent.EXTRA_SUBJECT,"Parking Payment");
         intent.putExtra(Intent.EXTRA_TEXT,paymentMsg);
