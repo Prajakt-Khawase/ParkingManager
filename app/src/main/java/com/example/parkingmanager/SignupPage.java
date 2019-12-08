@@ -112,24 +112,24 @@ public class SignupPage extends AppCompatActivity {
         }
     }
 
-    public void appCloseAlert() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(SignupPage.this);
-        builder.setTitle("Close App?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                //handle yes logic here
-                finish();
-            }
-        });
-
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                //nothing here
-            }
-        });
-
-        builder.show();
-    }
+//    public void appCloseAlert() {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(SignupPage.this);
+//        builder.setTitle("Close App?");
+//        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int id) {
+//                //handle yes logic here
+//                finish();
+//            }
+//        });
+//
+//        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int id) {
+//                //nothing here
+//            }
+//        });
+//
+//        builder.show();
+//    }
 
 
     //Email check
